@@ -8,10 +8,17 @@
       <p class="intro">
         Verken welke artikelen van de Landbouwvrijstellingsverordening
         (geconsolideerd {{ kaart.valid_from }}, geldig t/m {{ kaart.valid_to }})
-        een route bieden voor een steun-idee. Dit is de statische laag: filteren
-        op feiten uit de verordening zelf. De vragenflow met engine-oordeel is
-        laag&nbsp;1.
+        een route bieden voor een steun-idee.
       </p>
+
+      <nldd-toggle-button-group class="weergave-keuze">
+        <nldd-toggle-button :pressed="weergave === 'verkennen'" @click="weergave = 'verkennen'">Verkennen</nldd-toggle-button>
+        <nldd-toggle-button :pressed="weergave === 'vragenflow'" @click="weergave = 'vragenflow'">Vragenflow</nldd-toggle-button>
+      </nldd-toggle-button-group>
+
+      <VragenFlow v-if="weergave === 'vragenflow'" :routekaart="kaart" />
+
+      <template v-else>
 
       <div class="filters">
         <nldd-search-field
@@ -98,6 +105,7 @@
           <nldd-divider></nldd-divider>
         </nldd-list-item>
       </nldd-list>
+      </template>
     </nldd-simple-section>
 
     <nldd-simple-section v-else>
@@ -109,7 +117,9 @@
 
 <script setup>
 import { computed, onMounted, ref } from 'vue';
+import VragenFlow from './VragenFlow.vue';
 
+const weergave = ref('verkennen');
 const kaart = ref(null);
 const laadfout = ref(null);
 const zoek = ref('');
