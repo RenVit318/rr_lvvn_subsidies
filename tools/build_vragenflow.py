@@ -41,6 +41,8 @@ class Analyse:
         # naam -> value-boom van de actie die deze output produceert
         self.acties = acties or {}
         self.bezocht = set()
+        self.context = []  # stack van outputnamen tijdens de walk
+        self.param_context = {}  # param -> set van outputnamen
         # param -> {"gunstig": set of demands, "ongunstig": ...} as (kind, value)
         self.eisen = defaultdict(lambda: {True: [], False: []})
         self.ambigu = set()
@@ -52,6 +54,8 @@ class Analyse:
         ongunstig = waarde_onwaar if positief else waarde_waar
         self.eisen[param][True].append(gunstig)
         self.eisen[param][False].append(ongunstig)
+        if self.context:
+            self.param_context.setdefault(param, set()).add(self.context[-1])
 
 
 def ref_of_param(an, naam, pos):
@@ -61,7 +65,9 @@ def ref_of_param(an, naam, pos):
         sleutel = (naam, pos)
         if sleutel not in an.bezocht:
             an.bezocht.add(sleutel)
+            an.context.append(naam)
             loop(an.acties[naam], pos, an)
+            an.context.pop()
         return True
     return False
 
@@ -212,7 +218,9 @@ for a in doc["articles"]:
         sleutel = (naam, True)
         if sleutel not in an.bezocht:
             an.bezocht.add(sleutel)
+            an.context.append(naam)
             loop(acties[naam], True, an)
+            an.context.pop()
     decl = {p["name"]: p for p in ex.get("parameters", [])}
     params = {}
     for p, per_pol in an.eisen.items():
@@ -243,6 +251,7 @@ for a in doc["articles"]:
     artikelen[a["number"]] = {
         "endpoint": mr.get("endpoint"),
         "params": params,
+        "param_context": {p: sorted(c) for p, c in an.param_context.items() if p in decl},
     }
     for p, d in decl.items():
         vraag_meta[p]["types"].add(d.get("type", "string"))

@@ -6,67 +6,111 @@
       staan mag altijd — dan blijft de route in "mogelijk, mits".
     </p>
 
-    <nldd-banner v-if="fout" variant="error">{{ fout }}</nldd-banner>
+    <nldd-banner v-if="fout" variant="error" :text="fout"></nldd-banner>
     <p v-else-if="!klaar">Engine en corpus laden…</p>
 
     <template v-else>
       <div class="kolommen">
         <section class="vragen">
-          <nldd-title level="3">Vragen</nldd-title>
+          <nldd-title size="4"><h4>Wat voor steun is het?</h4></nldd-title>
+          <p class="vraag-meta">Artikel 1, lid 1 — kies alles wat van toepassing is; de rest geldt dan als niet van toepassing.</p>
+          <div class="chips">
+            <nldd-toggle-button
+              v-for="p in categorieParams" :key="p"
+              :value="p"
+              :text="humaniseer(p)"
+              :title="beschrijvingVan(p)"
+              size="sm"
+              :selected="categorieKeuze.has(p) || undefined"
+              @click="wisselCategorie(p)"
+            ></nldd-toggle-button>
+          </div>
+
+          <nldd-spacer size="16"></nldd-spacer>
+          <nldd-title size="4"><h4>Bijzonderheden</h4></nldd-title>
+          <p class="vraag-meta">Artikel 1, leden 3-7 — uitsluitingen en uitzonderingen. Meestal geldt hier niets van.</p>
+          <nldd-switch-field
+            label="Geen van deze bijzonderheden is van toepassing"
+            :checked="geenBijzonderheden || undefined"
+            @change="zetGeenBijzonderheden($event.detail?.checked ?? $event.target.checked)"
+          ></nldd-switch-field>
+          <div class="chips">
+            <nldd-toggle-button
+              v-for="p in bijzonderParams" :key="p"
+              :value="p"
+              :text="humaniseer(p)"
+              :title="beschrijvingVan(p)"
+              size="sm"
+              :selected="antwoorden[p] === true || undefined"
+              @click="wisselBijzonderheid(p)"
+            ></nldd-toggle-button>
+          </div>
+
+          <nldd-spacer size="16"></nldd-spacer>
+          <nldd-title size="4"><h4>Vervolgvragen</h4></nldd-title>
           <div v-for="v in vragen" :key="v.param" class="vraag">
             <p class="vraag-tekst">
               {{ v.beschrijving || v.param }}
               <span class="vraag-meta">raakt {{ v.raaktRoutes }} routes · art. {{ v.artikelen.join(', ') }}</span>
             </p>
             <div v-if="v.type === 'boolean'" class="antwoord">
-              <nldd-toggle-button-group>
-                <nldd-toggle-button :pressed="antwoorden[v.param] === true" @click="zet(v.param, true)">ja</nldd-toggle-button>
-                <nldd-toggle-button :pressed="antwoorden[v.param] === false" @click="zet(v.param, false)">nee</nldd-toggle-button>
-                <nldd-toggle-button :pressed="!(v.param in antwoorden)" @click="wis(v.param)">weet niet</nldd-toggle-button>
+              <nldd-toggle-button-group type="radio" size="sm" :accessible-label="v.param">
+                <nldd-toggle-button value="ja" text="Ja" :selected="antwoorden[v.param] === true || undefined" @click="zetKeuze(v, 'ja')"></nldd-toggle-button>
+                <nldd-toggle-button value="nee" text="Nee" :selected="antwoorden[v.param] === false || undefined" @click="zetKeuze(v, 'nee')"></nldd-toggle-button>
+                <nldd-toggle-button value="weet_niet" text="Weet niet" :selected="!(v.param in antwoorden) || undefined" @click="zetKeuze(v, 'weet_niet')"></nldd-toggle-button>
               </nldd-toggle-button-group>
             </div>
             <div v-else-if="v.opties.length" class="antwoord">
-              <nldd-toggle-button-group>
+              <nldd-toggle-button-group type="radio" size="sm" :accessible-label="v.param">
                 <nldd-toggle-button
                   v-for="o in v.opties" :key="o"
-                  :pressed="antwoorden[v.param] === o"
-                  @click="antwoorden[v.param] === o ? wis(v.param) : zet(v.param, o)"
-                >{{ o.toLowerCase().replaceAll('_', ' ') }}</nldd-toggle-button>
+                  :value="o"
+                  :text="o.toLowerCase().replaceAll('_', ' ')"
+                  :selected="antwoorden[v.param] === o || undefined"
+                  @click="zetOptie(v, o)"
+                ></nldd-toggle-button>
+                <nldd-toggle-button value="__weet_niet__" text="Weet niet" :selected="!(v.param in antwoorden) || undefined" @click="zetOptie(v, '__weet_niet__')"></nldd-toggle-button>
               </nldd-toggle-button-group>
             </div>
             <div v-else class="antwoord">
               <nldd-number-field
-                :label="v.type === 'amount' ? 'bedrag in EUR' : 'waarde'"
+                :label="v.type === 'amount' ? 'Bedrag in EUR' : 'Waarde'"
                 :value="ruweInvoer[v.param] ?? ''"
                 @input="zetNumeriek(v, $event.target.value)"
+                @change="zetNumeriek(v, $event.detail?.value ?? $event.target.value)"
               ></nldd-number-field>
             </div>
           </div>
-          <nldd-button v-if="beantwoord" variant="secondary" @click="reset">Begin opnieuw</nldd-button>
+          <nldd-button v-if="beantwoord" variant="secondary" text="Begin opnieuw" @click="reset"></nldd-button>
         </section>
 
-        <section class="emmers">
+        <section class="emmers-wrap">
+          <p class="antwoord-teller">
+            {{ Object.keys(antwoorden).length }} feiten beantwoord · beoordeling #{{ beoordelingsTeller }}
+          </p>
+          <div class="emmers">
           <div class="emmer">
-            <nldd-title level="3">Voldoet al ({{ oordeel.voldoet.length }})</nldd-title>
-            <p class="emmer-uitleg">Met de gegeven antwoorden zijn alle machinaal toetsbare voorwaarden vervuld.</p>
+            <nldd-title size="4"><h4>Voldoet al ({{ oordeel.voldoet.length }})</h4></nldd-title>
+            <p class="emmer-uitleg">Alle machinaal toetsbare voorwaarden zijn met deze antwoorden vervuld.</p>
             <RouteChip v-for="x in oordeel.voldoet" :key="x.route.artikel" :item="x" @uitleg="toonUitleg" />
           </div>
           <div class="emmer">
-            <nldd-title level="3">Mogelijk, mits … ({{ oordeel.mogelijk.length }})</nldd-title>
+            <nldd-title size="4"><h4>Mogelijk, mits… ({{ oordeel.mogelijk.length }})</h4></nldd-title>
             <p class="emmer-uitleg">Nog open; sommige met onvolledige analyse (gemarkeerd).</p>
             <RouteChip v-for="x in oordeel.mogelijk" :key="x.route.artikel" :item="x" @uitleg="toonUitleg" />
           </div>
           <div class="emmer">
-            <nldd-title level="3">Uitgesloten ({{ oordeel.uitgesloten.length }})</nldd-title>
-            <p class="emmer-uitleg">Geen enkele invulling van de open vragen maakt deze route nog toelaatbaar.</p>
+            <nldd-title size="4"><h4>Uitgesloten ({{ oordeel.uitgesloten.length }})</h4></nldd-title>
+            <p class="emmer-uitleg">Geen invulling van de open vragen maakt deze route nog toelaatbaar.</p>
             <RouteChip v-for="x in oordeel.uitgesloten" :key="x.route.artikel" :item="x" @uitleg="toonUitleg" />
+          </div>
           </div>
         </section>
       </div>
 
       <div v-if="uitlegTekst" class="uitleg">
-        <nldd-title level="4">Engine-trace — art. {{ uitlegArtikel }}</nldd-title>
-        <nldd-button variant="secondary" @click="uitlegTekst = null">Sluit</nldd-button>
+        <nldd-title size="5"><h5>Engine-trace — art. {{ uitlegArtikel }}</h5></nldd-title>
+        <nldd-button variant="secondary" text="Sluit" @click="uitlegTekst = null"></nldd-button>
         <pre>{{ uitlegTekst }}</pre>
       </div>
     </template>
@@ -94,10 +138,35 @@ const uitlegArtikel = ref(null);
 const totaal = computed(() => props.routekaart.routes.length);
 const beantwoord = computed(() => Object.keys(antwoorden).length > 0);
 
+// Groepering uit de modelstructuur van artikel 1 (param_context in
+// vragenflow.json): categorie-OR van lid 1 vs de uitsluitings-leden.
+const categorieParams = ref([]);
+const bijzonderParams = ref([]);
+const categorieKeuze = ref(new Set());
+const geenBijzonderheden = ref(false);
+let vragenData = null;
+
+function humaniseer(p) {
+  return p
+    .replace(/^(betreft_|is_|heeft_|vormt_|steun_|verricht_)/, '')
+    .replaceAll('_', ' ');
+}
+function beschrijvingVan(p) {
+  return vragenData?.vragen?.[p]?.beschrijving ?? p;
+}
+
 onMounted(async () => {
   try {
     const { engine, lawId } = await laadEngine();
     const vf = await (await fetch(`${import.meta.env.BASE_URL}vragenflow.json`)).json();
+    vragenData = vf;
+    const ctx = vf.artikelen['1']?.param_context ?? {};
+    categorieParams.value = Object.keys(ctx).filter((p) =>
+      ctx[p].includes('valt_onder_categorie_lid_1'),
+    );
+    bijzonderParams.value = Object.keys(vf.artikelen['1']?.params ?? {}).filter(
+      (p) => !categorieParams.value.includes(p),
+    );
     verkenner.value = maakVerkenner({
       engine,
       lawId,
@@ -113,22 +182,59 @@ onMounted(async () => {
 
 function herbeoordeel() {
   oordeel.value = verkenner.value.beoordeel({ ...antwoorden });
-  vragen.value = verkenner.value.volgendeVragen({ ...antwoorden }, oordeel.value);
+  const gegroepeerd = new Set([...categorieParams.value, ...bijzonderParams.value]);
+  vragen.value = verkenner.value
+    .volgendeVragen({ ...antwoorden }, oordeel.value, 20)
+    .filter((v) => !gegroepeerd.has(v.param))
+    .slice(0, 8);
 }
 
-function zet(param, waarde) {
-  antwoorden[param] = waarde;
+function wisselCategorie(p) {
+  const s = new Set(categorieKeuze.value);
+  s.has(p) ? s.delete(p) : s.add(p);
+  categorieKeuze.value = s;
+  if (s.size === 0) {
+    for (const q of categorieParams.value) delete antwoorden[q];
+  } else {
+    for (const q of categorieParams.value) antwoorden[q] = s.has(q);
+  }
   herbeoordeel();
 }
-function wis(param) {
-  delete antwoorden[param];
-  delete ruweInvoer[param];
+
+function zetGeenBijzonderheden(aan) {
+  geenBijzonderheden.value = !!aan;
+  for (const p of bijzonderParams.value) {
+    if (geenBijzonderheden.value) antwoorden[p] = antwoorden[p] === true ? true : false;
+    else if (antwoorden[p] === false) delete antwoorden[p];
+  }
+  herbeoordeel();
+}
+
+function wisselBijzonderheid(p) {
+  if (antwoorden[p] === true) {
+    if (geenBijzonderheden.value) antwoorden[p] = false;
+    else delete antwoorden[p];
+  } else {
+    antwoorden[p] = true;
+  }
+  herbeoordeel();
+}
+
+function zetKeuze(v, keuze) {
+  if (keuze === 'ja') antwoorden[v.param] = true;
+  else if (keuze === 'nee') antwoorden[v.param] = false;
+  else delete antwoorden[v.param];
+  herbeoordeel();
+}
+function zetOptie(v, keuze) {
+  if (!keuze || keuze === '__weet_niet__') delete antwoorden[v.param];
+  else antwoorden[v.param] = keuze;
   herbeoordeel();
 }
 function zetNumeriek(v, ruw) {
   ruweInvoer[v.param] = ruw;
   const n = Number(ruw);
-  if (ruw === '' || !Number.isFinite(n)) {
+  if (ruw === '' || ruw === null || !Number.isFinite(n)) {
     delete antwoorden[v.param];
   } else {
     antwoorden[v.param] = v.type === 'amount' ? Math.round(n * 100) : n;
@@ -138,6 +244,8 @@ function zetNumeriek(v, ruw) {
 function reset() {
   for (const k of Object.keys(antwoorden)) delete antwoorden[k];
   for (const k of Object.keys(ruweInvoer)) delete ruweInvoer[k];
+  categorieKeuze.value = new Set();
+  geenBijzonderheden.value = false;
   herbeoordeel();
 }
 function toonUitleg(artikel) {
@@ -150,14 +258,16 @@ function toonUitleg(artikel) {
 <style scoped>
 /* Aanvullende CSS bovenop het design system: kolom-layout voor de
    vragen/emmers-verdeling en de trace-weergave; hiervoor bestaat geen
-   NDD-patroon. */
+   NDD-patroon. Alle interactie-elementen zijn NDD-componenten. */
 .intro { max-width: 60rem; }
-.kolommen { display: grid; grid-template-columns: minmax(20rem, 1fr) 2fr; gap: 2rem; align-items: start; }
-.vraag { margin: 1rem 0; }
-.vraag-tekst { margin: 0 0 0.25rem; font-weight: 600; }
+.kolommen { display: grid; grid-template-columns: minmax(22rem, 1fr) 2fr; gap: 2rem; align-items: start; }
+.vraag { margin: 1.25rem 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0 1rem; }
+.vraag-tekst { margin: 0 0 0.35rem; font-weight: 600; }
 .vraag-meta { display: block; font-weight: 400; font-size: 0.8em; color: var(--nldd-color-text-secondary, #555); }
-.emmers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.emmers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .emmer-uitleg { font-size: 0.85em; color: var(--nldd-color-text-secondary, #555); }
+.uitleg { margin-top: 2rem; }
 .uitleg pre { overflow-x: auto; background: var(--nldd-color-background-secondary, #f5f5f5); padding: 1rem; font-size: 0.75em; }
 @media (max-width: 70rem) { .kolommen, .emmers { grid-template-columns: 1fr; } }
 </style>

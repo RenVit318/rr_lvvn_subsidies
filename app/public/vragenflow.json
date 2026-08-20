@@ -173,15 +173,124 @@
      "gunstig": false,
      "ongunstig": true
     }
+   },
+   "param_context": {
+    "actief_in_primaire_landbouwproductie": [
+     "valt_onder_categorie_lid_1"
+    ],
+    "actief_in_verwerking_landbouwproducten": [
+     "valt_onder_categorie_lid_1"
+    ],
+    "actief_in_afzet_landbouwproducten": [
+     "valt_onder_categorie_lid_1"
+    ],
+    "in_plattelandsgebied": [
+     "valt_onder_categorie_lid_1"
+    ],
+    "verricht_niet_agrarische_activiteiten": [
+     "valt_onder_categorie_lid_1"
+    ],
+    "steun_in_kader_strategisch_glb_plan": [
+     "valt_onder_categorie_lid_1"
+    ],
+    "is_gemeente_die_profiteert_van_clld_project": [
+     "valt_onder_categorie_lid_1"
+    ],
+    "betreft_milieubescherming_in_de_landbouw": [
+     "valt_onder_categorie_lid_1"
+    ],
+    "betreft_instandhouding_cultureel_en_natuurlijk_erfgoed": [
+     "valt_onder_categorie_lid_1"
+    ],
+    "betreft_herstel_schade_natuurrampen_in_de_landbouwsector": [
+     "valt_onder_categorie_lid_1",
+     "voldoet_aan_lid_4",
+     "voldoet_aan_lid_5"
+    ],
+    "betreft_onderzoek_ontwikkeling_en_innovatie": [
+     "valt_onder_categorie_lid_1"
+    ],
+    "betreft_steun_voor_de_bosbouw": [
+     "valt_onder_categorie_lid_1"
+    ],
+    "is_evaluatieplichtige_steunregeling_na_zes_maanden": [
+     "uitgesloten_op_grond_van_lid_3"
+    ],
+    "is_ingrijpende_aanpassing_van_evaluatieplichtige_steunregeling": [
+     "uitgesloten_op_grond_van_lid_3"
+    ],
+    "betreft_steun_voor_exportactiviteiten": [
+     "uitgesloten_op_grond_van_lid_3"
+    ],
+    "steun_afhankelijk_van_gebruik_binnenlandse_goederen": [
+     "uitgesloten_op_grond_van_lid_3"
+    ],
+    "heeft_openstaand_terugvorderingsbevel": [
+     "voldoet_aan_lid_4"
+    ],
+    "betreft_clld_of_eip_project": [
+     "voldoet_aan_lid_4",
+     "voldoet_aan_lid_5"
+    ],
+    "is_onderneming_in_moeilijkheden": [
+     "voldoet_aan_lid_5"
+    ],
+    "betreft_voorlichting_in_landbouw_of_bosbouwsector": [
+     "voldoet_aan_lid_5"
+    ],
+    "betreft_afzetbevordering_via_publicaties": [
+     "voldoet_aan_lid_5"
+    ],
+    "betreft_vergoeding_kosten_dierziekten_en_plantenplagen": [
+     "voldoet_aan_lid_5"
+    ],
+    "betreft_afvoeren_en_vernietigen_gestorven_dieren": [
+     "voldoet_aan_lid_5"
+    ],
+    "betreft_opvangen_nadelen_natura_2000": [
+     "voldoet_aan_lid_5"
+    ],
+    "in_moeilijkheden_geworden_door_de_gebeurtenis": [
+     "voldoet_aan_lid_5"
+    ],
+    "betreft_herstel_schade_gelijkgestelde_weersomstandigheden": [
+     "voldoet_aan_lid_5"
+    ],
+    "betreft_herstel_schade_dierziekten_of_plantenplagen": [
+     "voldoet_aan_lid_5"
+    ],
+    "betreft_herstel_schade_door_beschermde_dieren": [
+     "voldoet_aan_lid_5"
+    ],
+    "betreft_herstel_schade_aan_bossen": [
+     "voldoet_aan_lid_5"
+    ],
+    "steun_leidt_tot_schending_van_unierecht": [
+     "uitgesloten_op_grond_van_lid_6"
+    ],
+    "verplichting_tot_gebruik_binnenlandse_goederen_of_diensten": [
+     "uitgesloten_op_grond_van_lid_6"
+    ],
+    "beperkt_exploitatie_van_ooi_resultaten_in_andere_lidstaten": [
+     "uitgesloten_op_grond_van_lid_6"
+    ],
+    "vormt_uitvoersubsidie_wto": [
+     "uitgesloten_op_grond_van_lid_7"
+    ],
+    "vormt_niet_conforme_uitvoerfinancieringssteun_wto": [
+     "uitgesloten_op_grond_van_lid_7"
+    ]
    }
   },
   "3": {
    "endpoint": "voldoet_aan_gemeenschappelijke_voorwaarden",
-   "params": {}
+   "params": {},
+   "param_context": {}
   },
   "4": {
    "endpoint": null,
-   "params": {}
+   "params": {},
+   "param_context": {}
   },
   "5": {
    "endpoint": "is_transparante_steun",
@@ -244,6 +353,35 @@
      "gunstig": true,
      "ongunstig": false
     }
+   },
+   "param_context": {
+    "steunvorm": [
+     "is_transparante_steun"
+    ],
+    "lening_bse_berekend_met_referentiepercentage": [
+     "is_transparante_steun"
+    ],
+    "garantie_bse_op_basis_van_safe_harbour_premies": [
+     "is_transparante_steun"
+    ],
+    "garantie_bse_methode_vooraf_aanvaard": [
+     "is_transparante_steun"
+    ],
+    "fiscaal_voordeel_maximum_garandeert_drempel": [
+     "is_transparante_steun"
+    ],
+    "voorschot_nominaal_bedrag_binnen_drempels": [
+     "is_transparante_steun"
+    ],
+    "voorschot_bse_methode_vooraf_aanvaard": [
+     "is_transparante_steun"
+    ],
+    "activa_waarde_door_onafhankelijke_taxatie_vooraf": [
+     "is_transparante_steun"
+    ],
+    "activa_waarde_via_publieke_benchmark": [
+     "is_transparante_steun"
+    ]
    }
   },
   "6": {
@@ -336,6 +474,17 @@
      "ambigu": true,
      "neutraal": false
     }
+   },
+   "param_context": {
+    "recht_op_steun_volgens_objectieve_criteria_zonder_beoordelingsbevoegdheid": [
+     "voldoet_aan_lid_4"
+    ],
+    "maatregel_goedgekeurd_en_in_werking_voor_aanvang_werkzaamheden": [
+     "voldoet_aan_lid_4"
+    ],
+    "is_fiscale_vervolgregeling_activiteit_viel_onder_vroegere_regeling": [
+     "voldoet_aan_lid_4"
+    ]
    }
   },
   "8": {
@@ -350,6 +499,11 @@
      "ambigu": true,
      "neutraal": false
     }
+   },
+   "param_context": {
+    "cumulatie_overschrijdt_hoogste_maximum": [
+     "voldoet_aan_cumuleringsregels"
+    ]
    }
   },
   "9": {
@@ -365,6 +519,14 @@
      "gunstig": true,
      "ongunstig": false
     }
+   },
+   "param_context": {
+    "is_eip_of_clld_steun_art_39_40_60_61": [
+     "voldoet_aan_publicatievereisten"
+    ],
+    "wordt_gepubliceerd_conform_art_9": [
+     "voldoet_aan_publicatievereisten"
+    ]
    }
   },
   "14": {
@@ -605,6 +767,125 @@
      "ambigu": true,
      "neutraal": false
     }
+   },
+   "param_context": {
+    "actief_in_primaire_landbouwproductie": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "betreft_investering_primaire_landbouwproductie_op_landbouwbedrijf": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "doel_verbetering_algehele_prestatie_en_duurzaamheid": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "doel_verbetering_milieu_hygiene_of_dierenwelzijnsnormen": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "doel_aanleg_of_verbetering_infrastructuur_landbouwontwikkeling": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "doel_herstel_of_preventie_productiepotentieel": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "doel_klimaatmitigatie_en_adaptatie": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "doel_duurzame_bioeconomie_en_beheer_natuurlijke_hulpbronnen": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "doel_biodiversiteit_ecosysteemdiensten_habitats": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "betreft_productie_biobrandstoffen_of_hernieuwbare_energie_op_bedrijf": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "energieproductie_overschrijdt_gemiddeld_jaarlijks_verbruik_niet": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "betreft_productie_biobrandstoffen": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "biobrandstofcapaciteit_overschrijdt_gemiddeld_brandstofverbruik_niet": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "biobrandstoffen_niet_op_de_markt_verkocht": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "betreft_productie_thermische_energie_of_elektriciteit_uit_hernieuwbare_bronnen": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "installaties_voorzien_slechts_in_eigen_energiebehoefte": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "capaciteit_overschrijdt_gecombineerd_gemiddeld_energieverbruik_niet": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "elektriciteitsverkoop_aan_net_binnen_gemiddelde_limiet_eigen_verbruik": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "betreft_investering_in_infrastructuur_voor_hernieuwbare_energie": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "voldoet_aan_nationale_minimumnormen_energie_efficientie": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "installatie_heeft_vooral_tot_doel_elektriciteit_uit_biomassa": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "minimumpercentage_warmte_energie_wordt_gebruikt": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "milieueffectbeoordeling_vereist": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "milieueffectbeoordeling_uitgevoerd": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "vergunning_verleend_voor_datum_toekenning": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "kosten_binnen_in_aanmerking_komende_categorieen": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "betreft_irrigatie_investering": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "lidstaat_waarborgt_kostenterugwinning_waterdiensten": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "betreft_aankoop_betalingsrechten": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "betreft_aankoop_of_aanplant_eenjarige_gewassen": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "betreft_herstel_van_beschadigd_agrarisch_productiepotentieel": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "betreft_afwateringswerkzaamheden": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "betreft_aankoop_dieren": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "betreft_aankoop_waakhonden": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "betreft_bekabeling_datanetwerken_buiten_particulier_eigendom": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "in_strijd_met_verboden_of_beperkingen_vo_1308_2013": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "steun_beschikbaar_voor_alle_sectoren_primaire_productie": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "steun_beschikbaar_voor_hele_sector_plantaardige_productie": [
+     "voldoet_aan_voorwaarden_art_14"
+    ],
+    "steun_beschikbaar_voor_hele_sector_dierlijke_productie": [
+     "voldoet_aan_voorwaarden_art_14"
+    ]
    }
   },
   "15": {
@@ -630,6 +911,20 @@
      "gunstig": 0,
      "ongunstig": 1000000000000000
     }
+   },
+   "param_context": {
+    "actief_in_primaire_landbouwproductie": [
+     "voldoet_aan_voorwaarden_art_15"
+    ],
+    "betreft_ruilverkaveling_van_landbouwgrond": [
+     "voldoet_aan_voorwaarden_art_15"
+    ],
+    "steun_uitsluitend_voor_juridische_en_administratieve_kosten": [
+     "voldoet_aan_voorwaarden_art_15"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_15"
+    ]
    }
   },
   "16": {
@@ -669,6 +964,26 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "verplaatsing_leidt_tot_modernisering_of_verhoging_productiecapaciteit": [
+     "voldoet_aan_voorwaarden_art_16"
+    ],
+    "actief_in_primaire_landbouwproductie": [
+     "voldoet_aan_voorwaarden_art_16"
+    ],
+    "betreft_verplaatsing_landbouwbedrijfsgebouw": [
+     "voldoet_aan_voorwaarden_art_16"
+    ],
+    "verplaatsing_dient_doel_van_algemeen_belang": [
+     "voldoet_aan_voorwaarden_art_16"
+    ],
+    "algemeen_belang_omschreven_in_nationale_bepalingen": [
+     "voldoet_aan_voorwaarden_art_16"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_16"
+    ]
    }
   },
   "17": {
@@ -756,6 +1071,38 @@
      "ambigu": true,
      "neutraal": false
     }
+   },
+   "param_context": {
+    "actief_in_verwerking_landbouwproducten": [
+     "voldoet_aan_voorwaarden_art_17"
+    ],
+    "actief_in_afzet_landbouwproducten": [
+     "voldoet_aan_voorwaarden_art_17"
+    ],
+    "investering_betreft_activa_voor_verwerking_of_afzet_landbouwproducten": [
+     "voldoet_aan_voorwaarden_art_17"
+    ],
+    "betreft_productie_biobrandstoffen_op_basis_van_voedingsgewassen": [
+     "voldoet_aan_voorwaarden_art_17"
+    ],
+    "milieueffectbeoordeling_vereist": [
+     "voldoet_aan_voorwaarden_art_17"
+    ],
+    "milieueffectbeoordeling_uitgevoerd": [
+     "voldoet_aan_voorwaarden_art_17"
+    ],
+    "vergunning_verleend_voor_datum_toekenning": [
+     "voldoet_aan_voorwaarden_art_17"
+    ],
+    "kosten_binnen_in_aanmerking_komende_categorieen": [
+     "voldoet_aan_voorwaarden_art_17"
+    ],
+    "investering_om_te_voldoen_aan_geldende_unie_of_nationale_normen": [
+     "voldoet_aan_voorwaarden_art_17"
+    ],
+    "in_strijd_met_verboden_of_beperkingen_vo_1308_2013": [
+     "voldoet_aan_voorwaarden_art_17"
+    ]
    }
   },
   "18": {
@@ -816,6 +1163,41 @@
      "gunstig": 0,
      "ongunstig": 1000000000000000
     }
+   },
+   "param_context": {
+    "actief_in_primaire_landbouwproductie": [
+     "voldoet_aan_voorwaarden_art_18"
+    ],
+    "betreft_oprichting_plattelandsbedrijf_met_landbouwactiviteiten": [
+     "voldoet_aan_voorwaarden_art_18"
+    ],
+    "betreft_diversificatie_naar_andere_landbouwactiviteiten": [
+     "voldoet_aan_voorwaarden_art_18"
+    ],
+    "is_jonge_landbouwer": [
+     "voldoet_aan_voorwaarden_art_18"
+    ],
+    "is_kleine_of_micro_onderneming": [
+     "voldoet_aan_voorwaarden_art_18"
+    ],
+    "bedrijf_opgezet_als_rechtspersoon": [
+     "voldoet_aan_voorwaarden_art_18"
+    ],
+    "jonge_landbouwer_heeft_daadwerkelijke_en_voortdurende_zeggenschap": [
+     "voldoet_aan_voorwaarden_art_18"
+    ],
+    "bedrijfsplan_ingediend_bij_bevoegde_autoriteit": [
+     "voldoet_aan_voorwaarden_art_18"
+    ],
+    "voldoet_aan_vakbekwaamheidseis_glb_plan": [
+     "voldoet_aan_voorwaarden_art_18"
+    ],
+    "verbintenis_vakbekwaamheid_binnen_36_maanden_in_bedrijfsplan": [
+     "voldoet_aan_voorwaarden_art_18"
+    ],
+    "steunbedrag": [
+     "voldoet_aan_voorwaarden_art_18"
+    ]
    }
   },
   "19": {
@@ -864,6 +1246,32 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "officieel_erkend_door_bevoegde_autoriteit": [
+     "voldoet_aan_voorwaarden_art_19"
+    ],
+    "is_feitelijk_een_enkele_producent": [
+     "voldoet_aan_voorwaarden_art_19"
+    ],
+    "is_landbouwvereniging_zonder_gezamenlijke_aanbodaanpassing": [
+     "voldoet_aan_voorwaarden_art_19"
+    ],
+    "doelstellingen_onverenigbaar_met_gmo_bepalingen": [
+     "voldoet_aan_voorwaarden_art_19"
+    ],
+    "kosten_binnen_in_aanmerking_komende_categorieen": [
+     "voldoet_aan_voorwaarden_art_19"
+    ],
+    "forfaitair_in_jaarlijkse_tranches_eerste_vijf_jaar_na_erkenning": [
+     "voldoet_aan_voorwaarden_art_19"
+    ],
+    "steunbedrag": [
+     "voldoet_aan_voorwaarden_art_19"
+    ],
+    "steun_is_degressief": [
+     "voldoet_aan_voorwaarden_art_19"
+    ]
    }
   },
   "20": {
@@ -923,6 +1331,38 @@
      "ambigu": true,
      "neutraal": ""
     }
+   },
+   "param_context": {
+    "regeling_ingesteld_bij_unieregelgeving": [
+     "voldoet_aan_voorwaarden_art_20"
+    ],
+    "regeling_door_lidstaat_erkend_conform_lid_2b": [
+     "voldoet_aan_voorwaarden_art_20"
+    ],
+    "vrijwillige_certificeringsregeling_conform_eu_richtsnoeren": [
+     "voldoet_aan_voorwaarden_art_20"
+    ],
+    "toegankelijk_onder_objectieve_voorwaarden": [
+     "voldoet_aan_voorwaarden_art_20"
+    ],
+    "steun_als_jaarlijkse_financiele_stimulans": [
+     "voldoet_aan_voorwaarden_art_20"
+    ],
+    "betreft_kosten_van_eigen_controles": [
+     "voldoet_aan_voorwaarden_art_20"
+    ],
+    "controlekosten_krachtens_uniewetgeving_voor_rekening_producenten_zonder_hoogte": [
+     "voldoet_aan_voorwaarden_art_20"
+    ],
+    "steunduur_jaren": [
+     "voldoet_aan_voorwaarden_art_20"
+    ],
+    "steun_betaald_aan_instantie_onderzoeker_of_adviesverstrekker": [
+     "voldoet_aan_voorwaarden_art_20"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_20"
+    ]
    }
   },
   "21": {
@@ -988,6 +1428,44 @@
      "gunstig": 0,
      "ongunstig": 1000000000000000
     }
+   },
+   "param_context": {
+    "actie_betreft_kennisuitwisseling_of_voorlichting": [
+     "voldoet_aan_voorwaarden_art_21"
+    ],
+    "consistent_met_akis_beschrijving_glb_plan": [
+     "voldoet_aan_voorwaarden_art_21"
+    ],
+    "kosten_binnen_in_aanmerking_komende_categorieen": [
+     "voldoet_aan_voorwaarden_art_21"
+    ],
+    "opleidings_en_vervangingskosten_niet_rechtstreeks_aan_begunstigden": [
+     "voldoet_aan_voorwaarden_art_21"
+    ],
+    "aanbieder_beschikt_over_gekwalificeerd_en_geregeld_opgeleid_personeel": [
+     "voldoet_aan_voorwaarden_art_21"
+    ],
+    "toegankelijk_onder_objectieve_voorwaarden": [
+     "voldoet_aan_voorwaarden_art_21"
+    ],
+    "verricht_door_producentengroepering_of_organisatie": [
+     "voldoet_aan_voorwaarden_art_21"
+    ],
+    "lidmaatschap_is_toegangsvoorwaarde": [
+     "voldoet_aan_voorwaarden_art_21"
+    ],
+    "bijdragen_niet_leden_beperkt_tot_activiteitskosten": [
+     "voldoet_aan_voorwaarden_art_21"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_21"
+    ],
+    "betreft_demonstratieproject_met_investeringen": [
+     "voldoet_aan_voorwaarden_art_21"
+    ],
+    "steunbedrag": [
+     "voldoet_aan_voorwaarden_art_21"
+    ]
    }
   },
   "22": {
@@ -1097,6 +1575,56 @@
      "gunstig": 0,
      "ongunstig": 1000000000000000
     }
+   },
+   "param_context": {
+    "actief_in_primaire_landbouwproductie": [
+     "voldoet_aan_voorwaarden_art_22"
+    ],
+    "actief_in_verwerking_landbouwproducten": [
+     "voldoet_aan_voorwaarden_art_22"
+    ],
+    "actief_in_afzet_landbouwproducten": [
+     "voldoet_aan_voorwaarden_art_22"
+    ],
+    "is_jonge_landbouwer": [
+     "voldoet_aan_voorwaarden_art_22"
+    ],
+    "consistent_met_akis_beschrijving_glb_plan": [
+     "voldoet_aan_voorwaarden_art_22"
+    ],
+    "advies_verband_met_specifieke_doelstelling_glb": [
+     "voldoet_aan_voorwaarden_art_22"
+    ],
+    "advies_betreft_element_van_lid_3": [
+     "voldoet_aan_voorwaarden_art_22"
+    ],
+    "steunvorm": [
+     "voldoet_aan_voorwaarden_art_22"
+    ],
+    "aanbieder_gekwalificeerd_ervaren_en_betrouwbaar": [
+     "voldoet_aan_voorwaarden_art_22"
+    ],
+    "aanbieder_onpartijdig_en_zonder_belangenconflict": [
+     "voldoet_aan_voorwaarden_art_22"
+    ],
+    "toegankelijk_onder_objectieve_voorwaarden": [
+     "voldoet_aan_voorwaarden_art_22"
+    ],
+    "verricht_door_producentengroepering_of_organisatie": [
+     "voldoet_aan_voorwaarden_art_22"
+    ],
+    "lidmaatschap_is_toegangsvoorwaarde": [
+     "voldoet_aan_voorwaarden_art_22"
+    ],
+    "bijdragen_niet_leden_beperkt_tot_advieskosten": [
+     "voldoet_aan_voorwaarden_art_22"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_22"
+    ],
+    "steunbedrag": [
+     "voldoet_aan_voorwaarden_art_22"
+    ]
    }
   },
   "23": {
@@ -1148,6 +1676,32 @@
      "ambigu": true,
      "neutraal": false
     }
+   },
+   "param_context": {
+    "actief_in_primaire_landbouwproductie": [
+     "voldoet_aan_voorwaarden_art_23"
+    ],
+    "steun_dekt_werkelijke_kosten_vervanging": [
+     "voldoet_aan_voorwaarden_art_23"
+    ],
+    "vervangen_persoon": [
+     "voldoet_aan_voorwaarden_art_23"
+    ],
+    "reden_afwezigheid": [
+     "voldoet_aan_voorwaarden_art_23"
+    ],
+    "vervangingsduur_maanden": [
+     "voldoet_aan_voorwaarden_art_23"
+    ],
+    "steunvorm": [
+     "voldoet_aan_voorwaarden_art_23"
+    ],
+    "lidmaatschap_is_toegangsvoorwaarde": [
+     "voldoet_aan_voorwaarden_art_23"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_23"
+    ]
    }
   },
   "24": {
@@ -1234,6 +1788,56 @@
      "ambigu": true,
      "neutraal": false
     }
+   },
+   "param_context": {
+    "betreft_wedstrijden_beurzen_tentoonstellingen": [
+     "voldoet_aan_voorwaarden_art_24"
+    ],
+    "betreft_publicaties_brede_publiek": [
+     "voldoet_aan_voorwaarden_art_24"
+    ],
+    "publicatie_verwijst_naar_onderneming_merknaam_of_oorsprong": [
+     "voldoet_aan_voorwaarden_art_24"
+    ],
+    "oorsprongsverwijzing_valt_onder_toegestane_uitzondering": [
+     "voldoet_aan_voorwaarden_art_24"
+    ],
+    "kosten_binnen_in_aanmerking_komende_categorieen": [
+     "voldoet_aan_voorwaarden_art_24"
+    ],
+    "hoogste_waarde_symbolische_prijs": [
+     "voldoet_aan_voorwaarden_art_24"
+    ],
+    "steun_in_natura": [
+     "voldoet_aan_voorwaarden_art_24"
+    ],
+    "steun_als_vergoeding_werkelijke_kosten": [
+     "voldoet_aan_voorwaarden_art_24"
+    ],
+    "steun_in_cash_voor_symbolische_prijzen": [
+     "voldoet_aan_voorwaarden_art_24"
+    ],
+    "omvat_symbolische_prijzen": [
+     "voldoet_aan_voorwaarden_art_24"
+    ],
+    "steunvorm": [
+     "voldoet_aan_voorwaarden_art_24"
+    ],
+    "symbolische_prijs_uitgereikt_met_bewijs": [
+     "voldoet_aan_voorwaarden_art_24"
+    ],
+    "toegankelijk_onder_objectieve_voorwaarden": [
+     "voldoet_aan_voorwaarden_art_24"
+    ],
+    "lidmaatschap_is_toegangsvoorwaarde": [
+     "voldoet_aan_voorwaarden_art_24"
+    ],
+    "bijdragen_niet_leden_beperkt_tot_uitvoeringskosten": [
+     "voldoet_aan_voorwaarden_art_24"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_24"
+    ]
    }
   },
   "25": {
@@ -1278,6 +1882,10 @@
      "gunstig": true,
      "ongunstig": false
     },
+    "datum_instelling_steunregeling": {
+     "ambigu": true,
+     "neutraal": "2024-06-01"
+    },
     "steunbedrag_waarvoor_onderneming_in_aanmerking_komt": {
      "ambigu": true,
      "neutraal": 0
@@ -1285,10 +1893,6 @@
     "steunbedrag": {
      "ambigu": true,
      "neutraal": 0
-    },
-    "datum_instelling_steunregeling": {
-     "ambigu": true,
-     "neutraal": "2024-06-01"
     },
     "datum_betaling_steun": {
      "ambigu": true,
@@ -1310,6 +1914,32 @@
      "ambigu": true,
      "neutraal": false
     }
+   },
+   "param_context": {
+    "actief_in_primaire_landbouwproductie": [
+     "voldoet_aan_voorwaarden_art_25"
+    ],
+    "weersomstandigheid_formeel_erkend": [
+     "voldoet_aan_voorwaarden_art_25"
+    ],
+    "rechtstreeks_oorzakelijk_verband_weersomstandigheid_schade": [
+     "voldoet_aan_voorwaarden_art_25"
+    ],
+    "steun_rechtstreeks_aan_onderneming_betaald": [
+     "voldoet_aan_voorwaarden_art_25"
+    ],
+    "steun_betaald_aan_producentengroepering_waarvan_onderneming_lid": [
+     "voldoet_aan_voorwaarden_art_25"
+    ],
+    "schade_getaxeerd_door_bevoegde_taxateur": [
+     "voldoet_aan_voorwaarden_art_25"
+    ],
+    "verzekering_dekt_minstens_50_pct": [
+     "voldoet_aan_voorwaarden_art_25"
+    ],
+    "steun_met_minstens_50_pct_verminderd": [
+     "voldoet_aan_voorwaarden_art_25"
+    ]
    }
   },
   "26": {
@@ -1392,19 +2022,11 @@
      "gunstig": false,
      "ongunstig": true
     },
+    "totale_betalingen_voor_dezelfde_kosten": {
+     "ambigu": true,
+     "neutraal": 0
+    },
     "subsidiabele_kosten": {
-     "ambigu": true,
-     "neutraal": 0
-    },
-    "kosten_wettelijk_voor_rekening_begunstigde": {
-     "ambigu": true,
-     "neutraal": false
-    },
-    "steunbedrag_waarvoor_onderneming_in_aanmerking_komt": {
-     "ambigu": true,
-     "neutraal": 0
-    },
-    "steunbedrag": {
      "ambigu": true,
      "neutraal": 0
     },
@@ -1412,7 +2034,15 @@
      "ambigu": true,
      "neutraal": "2024-06-01"
     },
-    "totale_betalingen_voor_dezelfde_kosten": {
+    "steunbedrag_waarvoor_onderneming_in_aanmerking_komt": {
+     "ambigu": true,
+     "neutraal": 0
+    },
+    "kosten_wettelijk_voor_rekening_begunstigde": {
+     "ambigu": true,
+     "neutraal": false
+    },
+    "steunbedrag": {
      "ambigu": true,
      "neutraal": 0
     },
@@ -1424,6 +2054,56 @@
      "ambigu": true,
      "neutraal": "2024-06-01"
     }
+   },
+   "param_context": {
+    "actief_in_primaire_landbouwproductie": [
+     "voldoet_aan_voorwaarden_art_26"
+    ],
+    "soort_steun": [
+     "voldoet_aan_voorwaarden_art_26"
+    ],
+    "soort_gebeurtenis": [
+     "voldoet_aan_voorwaarden_art_26"
+    ],
+    "voorschriften_gelden_voor_ziekte_of_plaag": [
+     "voldoet_aan_voorwaarden_art_26"
+    ],
+    "onderdeel_van_programma_of_maatregel": [
+     "voldoet_aan_voorwaarden_art_26"
+    ],
+    "programma_bevat_beschrijving_maatregelen": [
+     "voldoet_aan_voorwaarden_art_26"
+    ],
+    "dierziekte_op_lijst": [
+     "voldoet_aan_voorwaarden_art_26"
+    ],
+    "nieuwe_ziekte_voldoet_aan_criteria": [
+     "voldoet_aan_voorwaarden_art_26"
+    ],
+    "volledig_bekostigd_uit_verplichte_heffingen": [
+     "voldoet_aan_voorwaarden_art_26"
+    ],
+    "steun_rechtstreeks_aan_onderneming_betaald": [
+     "voldoet_aan_voorwaarden_art_26"
+    ],
+    "steun_betaald_aan_producentengroepering_waarvan_onderneming_lid": [
+     "voldoet_aan_voorwaarden_art_26"
+    ],
+    "kosten_binnen_in_aanmerking_komende_categorieen": [
+     "voldoet_aan_voorwaarden_art_26"
+    ],
+    "uitbraak_formeel_erkend_of_aanwezigheid_bevestigd": [
+     "voldoet_aan_voorwaarden_art_26"
+    ],
+    "steun_in_natura_aan_aanbieder": [
+     "voldoet_aan_voorwaarden_art_26"
+    ],
+    "betaling_valt_onder_afwijking_lid_13": [
+     "voldoet_aan_voorwaarden_art_26"
+    ],
+    "veroorzaakt_door_opzet_of_nalatigheid_begunstigde": [
+     "voldoet_aan_voorwaarden_art_26"
+    ]
    }
   },
   "27": {
@@ -1468,6 +2148,10 @@
      "gunstig": true,
      "ongunstig": false
     },
+    "steun_uitgekeerd_aan_marktdeelnemer_of_organisatie": {
+     "ambigu": true,
+     "neutraal": false
+    },
     "steunintensiteit_pct": {
      "ambigu": true,
      "neutraal": 0
@@ -1475,11 +2159,33 @@
     "steun_betreft_verzekeringspremies_afvoer_vernietiging": {
      "ambigu": true,
      "neutraal": false
-    },
-    "steun_uitgekeerd_aan_marktdeelnemer_of_organisatie": {
-     "ambigu": true,
-     "neutraal": false
     }
+   },
+   "param_context": {
+    "begunstigde_is_veehouder": [
+     "voldoet_aan_voorwaarden_art_27"
+    ],
+    "kostencategorie_art_27": [
+     "voldoet_aan_voorwaarden_art_27"
+    ],
+    "betreft_eigenaarcontroles_of_routinematige_melkcontrole": [
+     "voldoet_aan_voorwaarden_art_27"
+    ],
+    "heffingen_beperkt_tot_en_rechtstreeks_opgelegd_aan_vleessector": [
+     "voldoet_aan_voorwaarden_art_27"
+    ],
+    "consistent_monitoringprogramma_gestorven_dieren": [
+     "voldoet_aan_voorwaarden_art_27"
+    ],
+    "steun_in_natura": [
+     "voldoet_aan_voorwaarden_art_27"
+    ],
+    "marktdeelnemer_actief_in_stadium_na_veeteeltsector": [
+     "voldoet_aan_voorwaarden_art_27"
+    ],
+    "marktdeelnemer_verleent_afvoer_vernietigingsdiensten": [
+     "voldoet_aan_voorwaarden_art_27"
+    ]
    }
   },
   "28": {
@@ -1544,6 +2250,44 @@
      "gunstig": 0,
      "ongunstig": 1000000000000000
     }
+   },
+   "param_context": {
+    "steunobject_art_28": [
+     "voldoet_aan_voorwaarden_art_28"
+    ],
+    "belemmert_interne_markt_verzekeringsdiensten": [
+     "voldoet_aan_voorwaarden_verzekeringspremiesteun_art_28_lid_2"
+    ],
+    "beperkt_tot_enkele_verzekeringsmaatschappij": [
+     "voldoet_aan_voorwaarden_verzekeringspremiesteun_art_28_lid_2"
+    ],
+    "gekoppeld_aan_in_lidstaat_gevestigde_maatschappij": [
+     "voldoet_aan_voorwaarden_verzekeringspremiesteun_art_28_lid_2"
+    ],
+    "dekking_bestemd_voor_verliezen_lid_3": [
+     "voldoet_aan_voorwaarden_art_28"
+    ],
+    "vergoedt_uitsluitend_herstel_verliezen_lid_3": [
+     "voldoet_aan_voorwaarden_art_28"
+    ],
+    "bevat_voorwaarden_over_toekomstige_productie": [
+     "voldoet_aan_voorwaarden_art_28"
+    ],
+    "fonds_geaccrediteerd_door_bevoegde_autoriteit": [
+     "voldoet_aan_voorwaarden_art_28"
+    ],
+    "fonds_voert_transparant_beleid": [
+     "voldoet_aan_voorwaarden_art_28"
+    ],
+    "fonds_heeft_duidelijke_schuldtoewijzingsvoorschriften": [
+     "voldoet_aan_voorwaarden_art_28"
+    ],
+    "lidstaat_heeft_fondsvoorschriften_vastgesteld": [
+     "voldoet_aan_voorwaarden_art_28"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_28"
+    ]
    }
   },
   "29": {
@@ -1610,6 +2354,38 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "oorzakelijk_verband_vastgesteld_door_lidstaat": [
+     "voldoet_aan_voorwaarden_art_29"
+    ],
+    "steun_betaald_aan": [
+     "voldoet_aan_voorwaarden_art_29"
+    ],
+    "onderneming_is_lid_van_groepering": [
+     "voldoet_aan_voorwaarden_art_29"
+    ],
+    "steun_niet_hoger_dan_aanspraak_onderneming": [
+     "voldoet_aan_voorwaarden_art_29"
+    ],
+    "regeling_ingesteld_binnen_drie_jaar_na_schadedatum": [
+     "voldoet_aan_voorwaarden_art_29"
+    ],
+    "steun_betaald_binnen_vier_jaar_na_schadedatum": [
+     "voldoet_aan_voorwaarden_art_29"
+    ],
+    "kosten_getaxeerd_door_bevoegde_taxateur": [
+     "voldoet_aan_voorwaarden_art_29"
+    ],
+    "preventieve_maatregelen_getroffen": [
+     "voldoet_aan_voorwaarden_art_29"
+    ],
+    "preventieve_maatregelen_redelijkerwijs_niet_mogelijk": [
+     "voldoet_aan_voorwaarden_art_29"
+    ],
+    "eerste_aanval_beschermd_dier_in_gebied": [
+     "voldoet_aan_voorwaarden_art_29"
+    ]
    }
   },
   "30": {
@@ -1640,18 +2416,35 @@
      "gunstig": true,
      "ongunstig": false
     },
-    "verbintenistype_art_30": {
+    "steunbedrag": {
      "ambigu": true,
-     "neutraal": ""
+     "neutraal": 0
     },
     "subsidiabele_kosten": {
      "ambigu": true,
      "neutraal": 0
     },
-    "steunbedrag": {
+    "verbintenistype_art_30": {
      "ambigu": true,
-     "neutraal": 0
+     "neutraal": ""
     }
+   },
+   "param_context": {
+    "in_kader_van_agromilieuklimaatverbintenis": [
+     "voldoet_aan_voorwaarden_art_30"
+    ],
+    "kostencategorie_art_30": [
+     "voldoet_aan_voorwaarden_art_30"
+    ],
+    "ras_is_met_uitsterven_bedreigd": [
+     "voldoet_aan_voorwaarden_art_30"
+    ],
+    "diersoort": [
+     "voldoet_aan_voorwaarden_art_30"
+    ],
+    "plantaardige_hulpbron_bedreigd_door_genetische_erosie": [
+     "voldoet_aan_voorwaarden_art_30"
+    ]
    }
   },
   "31": {
@@ -1736,6 +2529,47 @@
      "ambigu": true,
      "neutraal": false
     }
+   },
+   "param_context": {
+    "verbintenis_vrijwillig_aangegaan": [
+     "voldoet_aan_voorwaarden_art_31"
+    ],
+    "verbintenis_gaat_verder_dan_verplichte_normen": [
+     "voldoet_aan_voorwaarden_art_31"
+    ],
+    "verschilt_van_verbintenissen_art_31_vo_2021_2115": [
+     "voldoet_aan_voorwaarden_art_31"
+    ],
+    "verplichte_normen_omschreven_in_nationale_rechtsgrondslag": [
+     "voldoet_aan_voorwaarden_art_31"
+    ],
+    "steunduur_binnen_24_maanden_na_verplichtstelling": [
+     "voldoet_aan_voorwaarden_art_31"
+    ],
+    "verbintenisgebied": [
+     "voldoet_aan_voorwaarden_art_31"
+    ],
+    "verdoving_pijnstilling_of_immunocastratie_gebruikt": [
+     "voldoet_aan_voorwaarden_art_31"
+    ],
+    "verbintenisduur_jaren": [
+     "voldoet_aan_voorwaarden_art_31"
+    ],
+    "lidstaat_heeft_langere_periode_vastgesteld": [
+     "voldoet_aan_voorwaarden_art_31"
+    ],
+    "herzieningsclausule_vastgesteld": [
+     "voldoet_aan_voorwaarden_art_31"
+    ],
+    "steun_jaarlijks_verleend": [
+     "voldoet_aan_voorwaarden_art_31"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_31"
+    ],
+    "steunbedrag": [
+     "voldoet_aan_voorwaarden_art_31"
+    ]
    }
   },
   "32": {
@@ -1799,6 +2633,44 @@
      "gunstig": 0,
      "ongunstig": 1000000000000000
     }
+   },
+   "param_context": {
+    "samenwerking_draagt_bij_aan_doelstellingen_art_6_vo_2021_2115": [
+     "voldoet_aan_voorwaarden_art_32"
+    ],
+    "aantal_betrokken_actoren": [
+     "voldoet_aan_voorwaarden_art_32"
+    ],
+    "komt_vooral_ten_goede_aan_landbouwsector": [
+     "voldoet_aan_voorwaarden_art_32"
+    ],
+    "samenwerkingsvorm": [
+     "voldoet_aan_voorwaarden_art_32"
+    ],
+    "landbouwer_bereikt_pensioenleeftijd_uiterlijk_einde_verrichting": [
+     "voldoet_aan_voorwaarden_art_32"
+    ],
+    "uitsluitend_onderzoeksinstellingen_betrokken": [
+     "voldoet_aan_voorwaarden_art_32"
+    ],
+    "samenwerkingsactiviteit": [
+     "voldoet_aan_voorwaarden_art_32"
+    ],
+    "nieuwe_samenwerkingsvorm_of_nieuwe_activiteit": [
+     "voldoet_aan_voorwaarden_art_32"
+    ],
+    "aantal_intermediairs_tussen_landbouwer_en_consument": [
+     "voldoet_aan_voorwaarden_art_32"
+    ],
+    "in_overeenstemming_met_artt_206_210bis_vo_1308_2013": [
+     "voldoet_aan_voorwaarden_art_32"
+    ],
+    "steunduur_jaren": [
+     "voldoet_aan_voorwaarden_art_32"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_32"
+    ]
    }
   },
   "33": {
@@ -1841,6 +2713,26 @@
      "ambigu": true,
      "neutraal": false
     }
+   },
+   "param_context": {
+    "steun_jaarlijks_per_hectare": [
+     "voldoet_aan_voorwaarden_art_33"
+    ],
+    "nadeel_door_uitvoering_habitat_of_vogelrichtlijn": [
+     "voldoet_aan_voorwaarden_art_33"
+    ],
+    "vereisten_gaan_verder_dan_glmc_normen": [
+     "voldoet_aan_voorwaarden_art_33"
+    ],
+    "gebiedstype": [
+     "voldoet_aan_voorwaarden_art_33"
+    ],
+    "gebied_binnen_vijf_procent_grens": [
+     "voldoet_aan_voorwaarden_art_33"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_33"
+    ]
    }
   },
   "34": {
@@ -1909,6 +2801,41 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "teelttype": [
+     "voldoet_aan_voorwaarden_art_34"
+    ],
+    "vrijwillige_agromilieuklimaatverbintenis": [
+     "voldoet_aan_voorwaarden_art_34"
+    ],
+    "verbintenis_gaat_verder_dan_verplichte_normen": [
+     "voldoet_aan_voorwaarden_art_34"
+    ],
+    "verplichte_normen_omschreven_in_nationale_rechtsgrondslag": [
+     "voldoet_aan_voorwaarden_art_34"
+    ],
+    "toegang_tot_kennis_en_opleiding_geborgd": [
+     "voldoet_aan_voorwaarden_art_34"
+    ],
+    "volledig_beweide_areaal_beheerd": [
+     "voldoet_aan_voorwaarden_art_34"
+    ],
+    "veedichtheid_over_alle_relevante_dieren": [
+     "voldoet_aan_voorwaarden_art_34"
+    ],
+    "herzieningsclausule_vastgesteld": [
+     "voldoet_aan_voorwaarden_art_34"
+    ],
+    "steun_jaarlijks_per_hectare": [
+     "voldoet_aan_voorwaarden_art_34"
+    ],
+    "verbintenis_valt_onder_art_35": [
+     "voldoet_aan_voorwaarden_art_34"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_34"
+    ]
    }
   },
   "35": {
@@ -1968,6 +2895,38 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "teelttype": [
+     "voldoet_aan_voorwaarden_art_35"
+    ],
+    "vrijwillige_verbintenis_biologische_landbouw": [
+     "voldoet_aan_voorwaarden_art_35"
+    ],
+    "verbintenis_gaat_verder_dan_verplichte_normen": [
+     "voldoet_aan_voorwaarden_art_35"
+    ],
+    "verplichte_normen_omschreven_in_nationale_rechtsgrondslag": [
+     "voldoet_aan_voorwaarden_art_35"
+    ],
+    "toegang_tot_kennis_en_opleiding_geborgd": [
+     "voldoet_aan_voorwaarden_art_35"
+    ],
+    "herzieningsclausule_vastgesteld": [
+     "voldoet_aan_voorwaarden_art_35"
+    ],
+    "steun_jaarlijks_verleend": [
+     "voldoet_aan_voorwaarden_art_35"
+    ],
+    "verbintenis_valt_onder_art_34": [
+     "voldoet_aan_voorwaarden_art_35"
+    ],
+    "kosten_vallen_onder_art_20": [
+     "voldoet_aan_voorwaarden_art_35"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_35"
+    ]
    }
   },
   "36": {
@@ -2006,6 +2965,26 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "investering_voor_instandhouding_erfgoed": [
+     "voldoet_aan_voorwaarden_art_36"
+    ],
+    "erfgoed_op_landbouwbedrijf_of_in_bos": [
+     "voldoet_aan_voorwaarden_art_36"
+    ],
+    "erfgoed_formeel_erkend": [
+     "voldoet_aan_voorwaarden_art_36"
+    ],
+    "kostensoort": [
+     "voldoet_aan_voorwaarden_art_36"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_36"
+    ],
+    "steun_gekapitaliseerde_werkzaamheden_per_jaar": [
+     "voldoet_aan_voorwaarden_art_36"
+    ]
    }
   },
   "37": {
@@ -2043,6 +3022,10 @@
      "ambigu": true,
      "neutraal": 0
     },
+    "datum_instelling_steunregeling": {
+     "ambigu": true,
+     "neutraal": "2024-06-01"
+    },
     "steunbedrag_waarvoor_onderneming_in_aanmerking_komt": {
      "ambigu": true,
      "neutraal": 0
@@ -2050,10 +3033,6 @@
     "steunbedrag": {
      "ambigu": true,
      "neutraal": 0
-    },
-    "datum_instelling_steunregeling": {
-     "ambigu": true,
-     "neutraal": "2024-06-01"
     },
     "datum_betaling_steun": {
      "ambigu": true,
@@ -2063,6 +3042,23 @@
      "ambigu": true,
      "neutraal": "2024-06-01"
     }
+   },
+   "param_context": {
+    "natuurramp_formeel_erkend": [
+     "voldoet_aan_voorwaarden_art_37"
+    ],
+    "rechtstreeks_oorzakelijk_verband_natuurramp_schade": [
+     "voldoet_aan_voorwaarden_art_37"
+    ],
+    "steun_rechtstreeks_aan_onderneming_betaald": [
+     "voldoet_aan_voorwaarden_art_37"
+    ],
+    "steun_betaald_aan_producentengroepering_waarvan_onderneming_lid": [
+     "voldoet_aan_voorwaarden_art_37"
+    ],
+    "kosten_getaxeerd_door_bevoegde_taxateur": [
+     "voldoet_aan_voorwaarden_art_37"
+    ]
    }
   },
   "38": {
@@ -2116,6 +3112,32 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "project_van_algemeen_belang_voor_sector": [
+     "voldoet_aan_voorwaarden_art_38"
+    ],
+    "projectinformatie_vooraf_bekendgemaakt": [
+     "voldoet_aan_voorwaarden_art_38"
+    ],
+    "resultaten_openbaar_beschikbaar_ten_minste_vijf_jaar": [
+     "voldoet_aan_voorwaarden_art_38"
+    ],
+    "steun_rechtstreeks_aan_onderzoeksorganisatie_toegekend": [
+     "voldoet_aan_voorwaarden_art_38"
+    ],
+    "steun_in_vorm_van_prijsgebaseerde_betalingen": [
+     "voldoet_aan_voorwaarden_art_38"
+    ],
+    "gescheiden_boekhouding_economische_activiteiten": [
+     "voldoet_aan_voorwaarden_art_38"
+    ],
+    "invloedhebbende_ondernemingen_hebben_preferente_toegang": [
+     "voldoet_aan_voorwaarden_art_38"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_38"
+    ]
    }
   },
   "39": {
@@ -2140,6 +3162,17 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "neemt_deel_aan_eip_project_operationele_groep": [
+     "voldoet_aan_voorwaarden_art_39"
+    ],
+    "kosten_binnen_in_aanmerking_komende_categorieen": [
+     "voldoet_aan_voorwaarden_art_39"
+    ],
+    "steunintensiteit_binnen_maxima_verordening_2021_2115": [
+     "voldoet_aan_voorwaarden_art_39"
+    ]
    }
   },
   "40": {
@@ -2154,6 +3187,14 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "neemt_deel_aan_of_profiteert_van_eip_project": [
+     "voldoet_aan_voorwaarden_art_40"
+    ],
+    "totaal_steunbedrag_per_eip_project": [
+     "voldoet_aan_voorwaarden_art_40"
+    ]
    }
   },
   "41": {
@@ -2238,6 +3279,53 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "betreft_bebossing_of_aanleg_beboste_gronden": [
+     "voldoet_aan_voorwaarden_art_41"
+    ],
+    "kosten_binnen_in_aanmerking_komende_categorieen": [
+     "voldoet_aan_voorwaarden_art_41"
+    ],
+    "milieueffectbeoordeling_vereist": [
+     "voldoet_aan_voorwaarden_art_41"
+    ],
+    "milieueffectbeoordeling_uitgevoerd_en_vergunning_vooraf_verleend": [
+     "voldoet_aan_voorwaarden_art_41"
+    ],
+    "duur_jaarlijkse_premie_jaren": [
+     "voldoet_aan_voorwaarden_art_41"
+    ],
+    "betreft_uitgesloten_boomsoorten": [
+     "voldoet_aan_voorwaarden_art_41"
+    ],
+    "betreft_niet_inheemse_soorten": [
+     "voldoet_aan_voorwaarden_art_41"
+    ],
+    "steun_in_kader_strategisch_glb_plan": [
+     "voldoet_aan_voorwaarden_art_41"
+    ],
+    "soorten_aangepast_aan_milieu_en_klimaatomstandigheden": [
+     "voldoet_aan_voorwaarden_art_41"
+    ],
+    "voldoet_aan_minimale_milieuvereisten": [
+     "voldoet_aan_voorwaarden_art_41"
+    ],
+    "informatie_uit_bosbeheerplan_overgelegd": [
+     "voldoet_aan_voorwaarden_art_41"
+    ],
+    "is_gemeente_autonome_lokale_autoriteit": [
+     "voldoet_aan_voorwaarden_art_41"
+    ],
+    "gemeente_jaarbegroting": [
+     "voldoet_aan_voorwaarden_art_41"
+    ],
+    "gemeente_aantal_inwoners": [
+     "voldoet_aan_voorwaarden_art_41"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_41"
+    ]
    }
   },
   "42": {
@@ -2287,6 +3375,32 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "betreft_boslandbouwsysteem": [
+     "voldoet_aan_voorwaarden_art_42"
+    ],
+    "kosten_binnen_in_aanmerking_komende_categorieen": [
+     "voldoet_aan_voorwaarden_art_42"
+    ],
+    "milieueffectbeoordeling_vereist": [
+     "voldoet_aan_voorwaarden_art_42"
+    ],
+    "steun_in_vorm_van_financieringsinstrumenten": [
+     "voldoet_aan_voorwaarden_art_42"
+    ],
+    "milieueffectbeoordeling_uitgevoerd_en_vergunning_vooraf_verleend": [
+     "voldoet_aan_voorwaarden_art_42"
+    ],
+    "duur_jaarlijkse_premie_jaren": [
+     "voldoet_aan_voorwaarden_art_42"
+    ],
+    "structuur_en_samenstelling_door_lidstaat_bepaald": [
+     "voldoet_aan_voorwaarden_art_42"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_42"
+    ]
    }
   },
   "43": {
@@ -2412,6 +3526,80 @@
      "gunstig": true,
      "ongunstig": false
     }
+   },
+   "param_context": {
+    "betreft_preventie_of_herstel_bosschade": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "kosten_binnen_in_aanmerking_komende_categorieen": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "betreft_landbouwactiviteiten_op_areaal_met_art_34_verbintenissen": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "betreft_brandpreventie": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "bosgebied_opgenomen_in_bosbeschermingsplan": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "betreft_herstel_bosbouwpotentieel": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "formele_erkenning_van_de_schadegebeurtenis": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "bewijs_passende_risicobeheersinstrumenten": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "betreft_plantenplaag": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "erkenning_uitvoering_plaagbestrijdingsmaatregelen": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "steun_op_grond_van_artikel_107_lid_3_punt_c": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "bewijs_klimaatadaptatiemaatregelen_bij_herstel": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "aanpassingsmaatregelen_integraal_deel_van_regeling": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "betreft_preventie_plantenplaag": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "plaagrisico_wetenschappelijk_aangetoond_en_erkend": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "plaagsoorten_opgenomen_in_steunregeling": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "strookt_met_bosbeschermingsplan": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "informatie_uit_bosbeheerplan_overgelegd": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "is_gemeente_autonome_lokale_autoriteit": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "gemeente_jaarbegroting": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "gemeente_aantal_inwoners": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "betreft_steun_voor_inkomensverlies": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_43"
+    ],
+    "totale_vergoeding_ten_hoogste_100_pct_kosten": [
+     "voldoet_aan_voorwaarden_art_43"
+    ]
    }
   },
   "44": {
@@ -2466,6 +3654,35 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "betreft_investering_veerkracht_of_milieuwaarde_bosecosystemen": [
+     "voldoet_aan_voorwaarden_art_44"
+    ],
+    "investering_gericht_op_doelstellingen_lid_2": [
+     "voldoet_aan_voorwaarden_art_44"
+    ],
+    "betreft_niet_inheemse_soorten": [
+     "voldoet_aan_voorwaarden_art_44"
+    ],
+    "steun_in_kader_strategisch_glb_plan": [
+     "voldoet_aan_voorwaarden_art_44"
+    ],
+    "milieueffectbeoordeling_vereist": [
+     "voldoet_aan_voorwaarden_art_44"
+    ],
+    "steun_in_vorm_van_financieringsinstrumenten": [
+     "voldoet_aan_voorwaarden_art_44"
+    ],
+    "milieueffectbeoordeling_uitgevoerd_en_vergunning_vooraf_verleend": [
+     "voldoet_aan_voorwaarden_art_44"
+    ],
+    "kosten_binnen_in_aanmerking_komende_categorieen": [
+     "voldoet_aan_voorwaarden_art_44"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_44"
+    ]
    }
   },
   "45": {
@@ -2514,6 +3731,29 @@
      "ambigu": true,
      "neutraal": false
     }
+   },
+   "param_context": {
+    "is_bosbezitter_bosbeheerder_of_vereniging": [
+     "voldoet_aan_voorwaarden_art_45"
+    ],
+    "nadelen_uit_richtlijn_92_43_of_richtlijn_2009_147": [
+     "voldoet_aan_voorwaarden_art_45"
+    ],
+    "steun_jaarlijks_per_hectare_bosareaal": [
+     "voldoet_aan_voorwaarden_art_45"
+    ],
+    "is_natura_2000_bosgebied": [
+     "voldoet_aan_voorwaarden_art_45"
+    ],
+    "is_landschapselement_artikel_10_richtlijn_92_43": [
+     "voldoet_aan_voorwaarden_art_45"
+    ],
+    "landschapselementen_ten_hoogste_5_pct_natura_2000_netwerk": [
+     "voldoet_aan_voorwaarden_art_45"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_45"
+    ]
    }
   },
   "46": {
@@ -2586,6 +3826,44 @@
      "gunstig": true,
      "ongunstig": false
     }
+   },
+   "param_context": {
+    "betreft_vrijwillige_beheersverbintenis": [
+     "voldoet_aan_voorwaarden_art_46"
+    ],
+    "gericht_op_doelstellingen_artikel_6_verordening_2021_2115": [
+     "voldoet_aan_voorwaarden_art_46"
+    ],
+    "verbintenis_gaat_verder_dan_verplichte_normen": [
+     "voldoet_aan_voorwaarden_art_46"
+    ],
+    "verplichte_normen_omschreven_in_nationale_rechtsgrondslag": [
+     "voldoet_aan_voorwaarden_art_46"
+    ],
+    "verbintenisduur_jaren": [
+     "voldoet_aan_voorwaarden_art_46"
+    ],
+    "langere_periode_door_lidstaat_vastgesteld": [
+     "voldoet_aan_voorwaarden_art_46"
+    ],
+    "herzieningsclausule_vastgesteld": [
+     "voldoet_aan_voorwaarden_art_46"
+    ],
+    "vergoedt_extra_kosten_of_gederfde_inkomsten": [
+     "voldoet_aan_voorwaarden_art_46"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_46"
+    ],
+    "steunbedrag": [
+     "voldoet_aan_voorwaarden_art_46"
+    ],
+    "steun_in_kader_strategisch_glb_plan": [
+     "voldoet_aan_voorwaarden_art_46"
+    ],
+    "maximum_verhoogd_wegens_uitzonderlijke_gevallen": [
+     "voldoet_aan_voorwaarden_art_46"
+    ]
    }
   },
   "47": {
@@ -2625,6 +3903,26 @@
      "ambigu": true,
      "neutraal": false
     }
+   },
+   "param_context": {
+    "actief_in_bosbouwsector": [
+     "voldoet_aan_voorwaarden_art_47"
+    ],
+    "consistent_met_akis_beschrijving_glb_plan": [
+     "voldoet_aan_voorwaarden_art_47"
+    ],
+    "soort_actie": [
+     "voldoet_aan_voorwaarden_art_47"
+    ],
+    "steun_betaald_aan_aanbieder": [
+     "voldoet_aan_voorwaarden_art_47"
+    ],
+    "aanbieder_beschikt_over_gekwalificeerd_en_geregeld_opgeleid_personeel": [
+     "voldoet_aan_voorwaarden_art_47"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_47"
+    ]
    }
   },
   "48": {
@@ -2694,6 +3992,44 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "betreft_adviesdiensten_in_de_bosbouwsector": [
+     "voldoet_aan_voorwaarden_art_48"
+    ],
+    "dienst_is_van_permanente_of_periodieke_aard": [
+     "voldoet_aan_voorwaarden_art_48"
+    ],
+    "dienst_houdt_verband_met_exploitatiekosten_onderneming": [
+     "voldoet_aan_voorwaarden_art_48"
+    ],
+    "advies_bestrijkt_economische_ecologische_en_sociale_dimensies": [
+     "voldoet_aan_voorwaarden_art_48"
+    ],
+    "advies_verstrekt_actuele_technologische_en_wetenschappelijke_informatie": [
+     "voldoet_aan_voorwaarden_art_48"
+    ],
+    "consistent_met_akis_beschrijving_glb_plan": [
+     "voldoet_aan_voorwaarden_art_48"
+    ],
+    "adviessysteem_dekt_verplichte_uniewetgeving": [
+     "voldoet_aan_voorwaarden_art_48"
+    ],
+    "steunvorm": [
+     "voldoet_aan_voorwaarden_art_48"
+    ],
+    "aanbieder_gekwalificeerd_ervaren_en_betrouwbaar": [
+     "voldoet_aan_voorwaarden_art_48"
+    ],
+    "aanbieder_onpartijdig_en_zonder_belangenconflict": [
+     "voldoet_aan_voorwaarden_art_48"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_48"
+    ],
+    "steunbedrag_over_drie_jaar": [
+     "voldoet_aan_voorwaarden_art_48"
+    ]
    }
   },
   "49": {
@@ -2777,6 +4113,38 @@
      "ambigu": true,
      "neutraal": false
     }
+   },
+   "param_context": {
+    "betreft_investering_infrastructuur_bosbouwsector": [
+     "voldoet_aan_voorwaarden_art_49"
+    ],
+    "steun_in_vorm_van_financieringsinstrumenten": [
+     "voldoet_aan_voorwaarden_art_49"
+    ],
+    "milieueffectbeoordeling_vereist": [
+     "voldoet_aan_voorwaarden_art_49"
+    ],
+    "milieueffectbeoordeling_uitgevoerd_en_vergunning_vooraf_verleend": [
+     "voldoet_aan_voorwaarden_art_49"
+    ],
+    "informatie_uit_bosbeheerplan_overgelegd": [
+     "voldoet_aan_voorwaarden_art_49"
+    ],
+    "is_gemeente_autonome_lokale_autoriteit": [
+     "voldoet_aan_voorwaarden_art_49"
+    ],
+    "gemeente_jaarbegroting": [
+     "voldoet_aan_voorwaarden_art_49"
+    ],
+    "gemeente_aantal_inwoners": [
+     "voldoet_aan_voorwaarden_art_49"
+    ],
+    "steun_in_kader_strategisch_glb_plan": [
+     "voldoet_aan_voorwaarden_art_49"
+    ],
+    "soort_infrastructuurinvestering": [
+     "voldoet_aan_voorwaarden_art_49"
+    ]
    }
   },
   "50": {
@@ -2812,13 +4180,13 @@
      "gunstig": true,
      "ongunstig": false
     },
-    "investering_betreft_hout_als_grondstof_of_energiebron": {
-     "ambigu": true,
-     "neutraal": false
-    },
     "steunintensiteit_pct": {
      "ambigu": true,
      "neutraal": 0
+    },
+    "investering_betreft_hout_als_grondstof_of_energiebron": {
+     "ambigu": true,
+     "neutraal": false
     },
     "steunbedrag": {
      "ambigu": true,
@@ -2836,6 +4204,26 @@
      "ambigu": true,
      "neutraal": false
     }
+   },
+   "param_context": {
+    "betreft_investering_bosbouwtechnologie_of_verwerking_afzet": [
+     "voldoet_aan_voorwaarden_art_50"
+    ],
+    "milieueffectbeoordeling_vereist": [
+     "voldoet_aan_voorwaarden_art_50"
+    ],
+    "milieueffectbeoordeling_uitgevoerd_en_vergunning_vooraf_verleend": [
+     "voldoet_aan_voorwaarden_art_50"
+    ],
+    "informatie_uit_bosbeheerplan_overgelegd": [
+     "voldoet_aan_voorwaarden_art_50"
+    ],
+    "motivering_op_basis_van_verwachte_verbeteringen": [
+     "voldoet_aan_voorwaarden_art_50"
+    ],
+    "beperkt_tot_handelingen_voor_industriele_verwerking": [
+     "voldoet_aan_voorwaarden_art_50"
+    ]
    }
   },
   "51": {
@@ -2856,6 +4244,17 @@
      "gunstig": 0,
      "ongunstig": 1000000000000000
     }
+   },
+   "param_context": {
+    "in_kader_van_bosmilieuklimaatdiensten_en_bosinstandhouding": [
+     "voldoet_aan_voorwaarden_art_51"
+    ],
+    "soort_verrichting": [
+     "voldoet_aan_voorwaarden_art_51"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_51"
+    ]
    }
   },
   "52": {
@@ -2900,6 +4299,29 @@
      "ambigu": true,
      "neutraal": false
     }
+   },
+   "param_context": {
+    "begunstigde_is_producentengroepering_of_organisatie_in_bosbouwsector": [
+     "voldoet_aan_voorwaarden_art_52"
+    ],
+    "leden_geen_grote_ondernemingen_behalve_gemeenten": [
+     "voldoet_aan_voorwaarden_art_52"
+    ],
+    "kosten_binnen_subsidiabele_kostencategorieen": [
+     "voldoet_aan_voorwaarden_art_52"
+    ],
+    "kosten_gemaakt_na_vijfde_jaar_na_officiele_erkenning": [
+     "voldoet_aan_voorwaarden_art_52"
+    ],
+    "betreft_collectieve_milieu_en_klimaatacties": [
+     "voldoet_aan_voorwaarden_art_52"
+    ],
+    "laatste_tranche_na_verificatie_bedrijfsplan": [
+     "voldoet_aan_voorwaarden_art_52"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_52"
+    ]
    }
   },
   "53": {
@@ -2920,6 +4342,17 @@
      "gunstig": 0,
      "ongunstig": 1000000000000000
     }
+   },
+   "param_context": {
+    "betreft_ruilverkaveling_van_bosbouwgrond": [
+     "voldoet_aan_voorwaarden_art_53"
+    ],
+    "steun_uitsluitend_voor_juridische_en_administratieve_kosten": [
+     "voldoet_aan_voorwaarden_art_53"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_53"
+    ]
    }
   },
   "54": {
@@ -2974,6 +4407,35 @@
      "ambigu": true,
      "neutraal": false
     }
+   },
+   "param_context": {
+    "samenwerking_draagt_bij_aan_doelstellingen_art_6_vo_2021_2115": [
+     "voldoet_aan_voorwaarden_art_54"
+    ],
+    "aantal_betrokken_actoren": [
+     "voldoet_aan_voorwaarden_art_54"
+    ],
+    "samenwerking_komt_vooral_ten_goede_aan_bosbouwsector": [
+     "voldoet_aan_voorwaarden_art_54"
+    ],
+    "vorm_van_samenwerking": [
+     "voldoet_aan_voorwaarden_art_54"
+    ],
+    "uitsluitend_onderzoeksinstellingen_betrokken": [
+     "voldoet_aan_voorwaarden_art_54"
+    ],
+    "nieuwe_samenwerkingsvorm_of_nieuwe_activiteit": [
+     "voldoet_aan_voorwaarden_art_54"
+    ],
+    "aantal_intermediairs_tussen_bosbezitter_en_consument": [
+     "voldoet_aan_voorwaarden_art_54"
+    ],
+    "steunduur_jaren": [
+     "voldoet_aan_voorwaarden_art_54"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_54"
+    ]
    }
   },
   "55": {
@@ -3040,6 +4502,38 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "glb_plan_goedgekeurd_voor_tenuitvoerlegging": [
+     "voldoet_aan_voorwaarden_art_55"
+    ],
+    "steun_in_kader_strategisch_glb_plan": [
+     "voldoet_aan_voorwaarden_art_55"
+    ],
+    "steun_identiek_aan_glb_plan_maatregel": [
+     "voldoet_aan_voorwaarden_art_55"
+    ],
+    "basisdiensten_en_infrastructuur_in_plattelandsgebied": [
+     "voldoet_aan_voorwaarden_art_55"
+    ],
+    "soort_investering_art_55": [
+     "voldoet_aan_voorwaarden_art_55"
+    ],
+    "subsidiabele_kosten": [
+     "voldoet_aan_voorwaarden_art_55"
+    ],
+    "betreft_hernieuwbare_energie_energie_efficientie_of_breedband": [
+     "voldoet_aan_voorwaarden_art_55"
+    ],
+    "strookt_met_ontwikkelingsplannen_en_lokale_strategieen": [
+     "voldoet_aan_voorwaarden_art_55"
+    ],
+    "is_exploitatiesteun": [
+     "voldoet_aan_voorwaarden_art_55"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_55"
+    ]
    }
   },
   "56": {
@@ -3103,6 +4597,38 @@
      "gunstig": 0,
      "ongunstig": 1000000000000000
     }
+   },
+   "param_context": {
+    "steun_in_kader_strategisch_glb_plan": [
+     "voldoet_aan_voorwaarden_art_56"
+    ],
+    "steun_identiek_aan_glb_plan_maatregel": [
+     "voldoet_aan_voorwaarden_art_56"
+    ],
+    "begunstigde_categorie_art_56": [
+     "voldoet_aan_voorwaarden_art_56"
+    ],
+    "in_plattelandsgebied": [
+     "voldoet_aan_voorwaarden_art_56"
+    ],
+    "diversifieert_naar_niet_agrarische_activiteiten": [
+     "voldoet_aan_voorwaarden_art_56"
+    ],
+    "lid_landbouwhuishouden_is_rechtspersoon": [
+     "voldoet_aan_voorwaarden_art_56"
+    ],
+    "oefent_landbouwactiviteit_uit_bij_aanvraag": [
+     "voldoet_aan_voorwaarden_art_56"
+    ],
+    "bedrijfsplan_ingediend": [
+     "voldoet_aan_voorwaarden_art_56"
+    ],
+    "looptijd_bedrijfsplan_jaren": [
+     "voldoet_aan_voorwaarden_art_56"
+    ],
+    "steunbedrag": [
+     "voldoet_aan_voorwaarden_art_56"
+    ]
    }
   },
   "57": {
@@ -3151,6 +4677,29 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "is_landbouwer": [
+     "voldoet_aan_voorwaarden_art_57"
+    ],
+    "treedt_toe_of_toegetreden_voorgaande_vijf_jaar": [
+     "voldoet_aan_voorwaarden_art_57"
+    ],
+    "steun_in_kader_strategisch_glb_plan": [
+     "voldoet_aan_voorwaarden_art_57"
+    ],
+    "steun_identiek_aan_glb_plan_maatregel": [
+     "voldoet_aan_voorwaarden_art_57"
+    ],
+    "soort_kwaliteitsregeling_art_57": [
+     "voldoet_aan_voorwaarden_art_57"
+    ],
+    "steun_in_vorm_jaarlijkse_financiele_stimulans": [
+     "voldoet_aan_voorwaarden_art_57"
+    ],
+    "steunbedrag": [
+     "voldoet_aan_voorwaarden_art_57"
+    ]
    }
   },
   "58": {
@@ -3211,6 +4760,41 @@
      "gunstig": 0,
      "ongunstig": 1000000000000000
     }
+   },
+   "param_context": {
+    "steun_in_kader_strategisch_glb_plan": [
+     "voldoet_aan_voorwaarden_art_58"
+    ],
+    "steun_identiek_aan_glb_plan_maatregel": [
+     "voldoet_aan_voorwaarden_art_58"
+    ],
+    "begunstigde_is_producentengroepering": [
+     "voldoet_aan_voorwaarden_art_58"
+    ],
+    "activiteiten_op_interne_markt": [
+     "voldoet_aan_voorwaarden_art_58"
+    ],
+    "product_valt_onder_kwaliteitsregeling_met_steun_art_57": [
+     "voldoet_aan_voorwaarden_art_58"
+    ],
+    "zet_aan_tot_kopen_wegens_oorsprong": [
+     "voldoet_aan_voorwaarden_art_58"
+    ],
+    "valt_onder_titel_ii_vo_1151_2012": [
+     "voldoet_aan_voorwaarden_art_58"
+    ],
+    "oorsprong_aangegeven": [
+     "voldoet_aan_voorwaarden_art_58"
+    ],
+    "oorsprongsvermelding_ondergeschikt_aan_hoofdboodschap": [
+     "voldoet_aan_voorwaarden_art_58"
+    ],
+    "betreft_specifieke_ondernemingen_of_handelsmerken": [
+     "voldoet_aan_voorwaarden_art_58"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_58"
+    ]
    }
   },
   "59": {
@@ -3289,6 +4873,47 @@
      "gunstig": 0,
      "ongunstig": 1000000000000000
     }
+   },
+   "param_context": {
+    "steun_in_kader_strategisch_glb_plan": [
+     "voldoet_aan_voorwaarden_art_59"
+    ],
+    "steun_identiek_aan_glb_plan_maatregel": [
+     "voldoet_aan_voorwaarden_art_59"
+    ],
+    "aantal_betrokken_actoren": [
+     "voldoet_aan_voorwaarden_art_59"
+    ],
+    "samenwerkingsactiviteit_art_59": [
+     "voldoet_aan_voorwaarden_art_59"
+    ],
+    "nationaal_strategisch_plan_voorziet_steun_individuele_actoren": [
+     "voldoet_aan_voorwaarden_art_59"
+    ],
+    "resultaten_worden_verspreid": [
+     "voldoet_aan_voorwaarden_art_59"
+    ],
+    "samenwerking_komt_ten_goede_aan_plattelandsgebieden": [
+     "voldoet_aan_voorwaarden_art_59"
+    ],
+    "uitsluitend_onderzoeksinstellingen_betrokken": [
+     "voldoet_aan_voorwaarden_art_59"
+    ],
+    "nieuwe_samenwerkingsvorm_of_nieuwe_activiteit": [
+     "voldoet_aan_voorwaarden_art_59"
+    ],
+    "hoogstens_een_intermediair_tussen_landbouwer_en_consument": [
+     "voldoet_aan_voorwaarden_art_59"
+    ],
+    "in_overeenstemming_met_artt_206_210bis_vo_1308_2013": [
+     "voldoet_aan_voorwaarden_art_59"
+    ],
+    "steunduur_jaren": [
+     "voldoet_aan_voorwaarden_art_59"
+    ],
+    "steunintensiteit_pct": [
+     "voldoet_aan_voorwaarden_art_59"
+    ]
    }
   },
   "60": {
@@ -3318,6 +4943,20 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "betreft_clld_project": [
+     "voldoet_aan_voorwaarden_art_60"
+    ],
+    "neemt_deel_aan_clld_project": [
+     "voldoet_aan_voorwaarden_art_60"
+    ],
+    "begunstigde_is_gemeente": [
+     "voldoet_aan_voorwaarden_art_60"
+    ],
+    "kostengebied_clld_project": [
+     "voldoet_aan_voorwaarden_art_60"
+    ]
    }
   },
   "61": {
@@ -3347,6 +4986,23 @@
      "ambigu": true,
      "neutraal": 0
     }
+   },
+   "param_context": {
+    "betreft_clld_project": [
+     "voldoet_aan_voorwaarden_art_61"
+    ],
+    "neemt_deel_aan_of_profiteert_van_clld_project": [
+     "voldoet_aan_voorwaarden_art_61"
+    ],
+    "begunstigde_is_gemeente": [
+     "voldoet_aan_voorwaarden_art_61"
+    ],
+    "kostengebied_clld_project": [
+     "voldoet_aan_voorwaarden_art_61"
+    ],
+    "totaal_steunbedrag_per_clld_project": [
+     "voldoet_aan_voorwaarden_art_61"
+    ]
    }
   },
   "Bijlage I": {
@@ -3367,6 +5023,17 @@
      "gunstig": 0,
      "ongunstig": 1000000000000000
     }
+   },
+   "param_context": {
+    "aantal_werknemers": [
+     "is_kmo"
+    ],
+    "jaaromzet": [
+     "is_kmo"
+    ],
+    "balanstotaal": [
+     "is_kmo"
+    ]
    }
   }
  },

@@ -61,29 +61,66 @@ export function maakVerkenner({ engine, lawId, vragenflow, routekaart }) {
     let r = draai(endpoint, basis);
     if (r.waarde === true) return { levend: true };
     let pogingen = 0;
+    let ambiguGeprobeerd = 0;
+    let ambiguTotaal = 0;
     for (const n of ketens(target)) {
       if (!(n in artikelen)) continue;
       for (const [p, spec] of Object.entries(artikelen[n].params)) {
-        if (p in antwoorden || spec.ambigu) continue;
+        if (p in antwoorden) continue;
+        // conflicterende gunstig-kandidaten: alternatieven proberen
         for (const kand of (spec.gunstig_kandidaten ?? []).slice(1)) {
-          if (pogingen++ >= MAX_RETRIES_PER_ROUTE) return { levend: false, fout: r.fout };
-          const variant = { ...basis, [p]: kand };
-          const v = draai(endpoint, variant);
+          if (pogingen++ >= MAX_RETRIES_PER_ROUTE) break;
+          const v = draai(endpoint, { ...basis, [p]: kand });
           if (v.waarde === true) return { levend: true };
+        }
+        // ambigu geanalyseerde booleans: de niet-neutrale kant proberen —
+        // redt een enkele flip de route, dan is de ambiguïteit beslissend
+        // en is 'mogelijk' het eerlijke oordeel
+        if (spec.ambigu) {
+          ambiguTotaal++;
+          const probes = [];
+          if (typeof spec.neutraal === 'boolean') probes.push(!spec.neutraal);
+          else if (spec.neutraal === '') {
+            probes.push(...(vragenflow.vragen[p]?.opties ?? []).slice(0, 6));
+          } else if (typeof spec.neutraal === 'number') {
+            probes.push(1e15);
+          }
+          for (const probe of probes) {
+            if (pogingen >= MAX_RETRIES_PER_ROUTE) break;
+            pogingen++;
+            ambiguGeprobeerd++;
+            const v = draai(endpoint, { ...basis, [p]: probe });
+            if (v.waarde === true) return { levend: true, doorAmbigu: true };
+          }
         }
       }
     }
-    return { levend: false, fout: r.fout };
+    // niet te redden met enkelvoudige variaties → uitgesloten; 'indicatief'
+    // wanneer er ambiguïteit was die we niet uitputtend konden verkennen
+    return {
+      levend: false,
+      fout: r.fout,
+      indicatief: ambiguTotaal > ambiguGeprobeerd || ambiguGeprobeerd > 0,
+    };
   }
 
-  function ketenHeeftAmbigu(target, antwoorden) {
-    return ketens(target).some(
-      (n) =>
-        n in artikelen &&
-        Object.entries(artikelen[n].params).some(
-          ([p, spec]) => spec.ambigu && !(p in antwoorden),
-        ),
-    );
+  // Routes die al zonder enig antwoord optimistisch vastlopen zijn
+  // analyse-artefacten (IF-structuren die de polariteits-analyse niet
+  // doorgrondt), geen juridisch oordeel: die blijven permanent 'mogelijk ·
+  // analyse onvolledig'. Alleen routes die door ántwoorden sterven zijn
+  // werkelijk uitgesloten.
+  let analyseDood = null;
+
+  function bepaalAnalyseDood() {
+    if (analyseDood) return analyseDood;
+    analyseDood = new Set();
+    for (const route of routekaart.routes) {
+      const n = route.artikel;
+      if (!(n in artikelen)) continue;
+      const opt = optimistisch(n, {});
+      if (!opt.levend) analyseDood.add(n);
+    }
+    return analyseDood;
   }
 
   /** Beoordeel alle routes; antwoorden = { paramnaam: waarde }. */
@@ -91,18 +128,27 @@ export function maakVerkenner({ engine, lawId, vragenflow, routekaart }) {
     const uitgesloten = [];
     const voldoet = [];
     const mogelijk = [];
+    const artefacten = bepaalAnalyseDood();
     for (const route of routekaart.routes) {
       const n = route.artikel;
       if (!(n in artikelen)) continue;
       const endpoint = artikelen[n].endpoint;
+      if (artefacten.has(n)) {
+        mogelijk.push({ route, status: 'mogelijk_onzeker' });
+        continue;
+      }
       const opt = optimistisch(n, antwoorden);
       if (!opt.levend) {
-        const zeker = !ketenHeeftAmbigu(n, antwoorden) && !opt.fout;
-        (zeker ? uitgesloten : mogelijk).push({
-          route,
-          status: zeker ? 'uitgesloten' : 'mogelijk_onzeker',
-          fout: opt.fout,
-        });
+        if (opt.fout) {
+          // engine-fout is geen juridisch oordeel: route blijft open, gemarkeerd
+          mogelijk.push({ route, status: 'mogelijk_onzeker', fout: opt.fout });
+        } else {
+          uitgesloten.push({
+            route,
+            status: 'uitgesloten',
+            indicatief: !!opt.indicatief,
+          });
+        }
         continue;
       }
       const pess = draai(endpoint, basisToewijzing(n, 'pess', antwoorden));
@@ -145,7 +191,7 @@ export function maakVerkenner({ engine, lawId, vragenflow, routekaart }) {
     const endpoint = artikelen[target].endpoint;
     const params = basisToewijzing(target, 'opt', antwoorden);
     try {
-      const res = engine.execute_with_trace(lawId, endpoint, params, '2024-06-01');
+      const res = engine.executeWithTrace(lawId, endpoint, params, '2024-06-01');
       return { trace: res.trace_text ?? res.trace ?? null, outputs: res.outputs };
     } catch (e) {
       return { trace: null, fout: String(e) };

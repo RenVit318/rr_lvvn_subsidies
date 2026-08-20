@@ -23,7 +23,7 @@ export function laadEngine() {
     // Verkenningsmodus: onbeoordeelde untranslatables blokkeren executie
     // (RFC-012); voor het filter zetten we ze op accepted en tonen we ze
     // expliciet als voorwaarden die menselijke beoordeling vergen.
-    const lawId = engine.load_law(yaml.replaceAll('accepted: false', 'accepted: true'));
+    const lawId = engine.loadLaw(yaml.replaceAll('accepted: false', 'accepted: true'));
     instance = { engine, lawId };
     return instance;
   })();
