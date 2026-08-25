@@ -186,6 +186,22 @@ export function maakVerkenner({ engine, lawId, vragenflow, routekaart }) {
       .map(([p, n]) => ({ param: p, raaktRoutes: n, ...vragenflow.vragen[p] }));
   }
 
+  /** Open vragen om één route rond te maken: onbeantwoorde feiten van het
+   *  artikel zelf, gevolgd door onbeantwoorde poort-feiten (hoofdstuk I). */
+  function vragenVoorRoute(target, antwoorden) {
+    const eigen = Object.keys(artikelen[target]?.params ?? {});
+    const poort = gates.flatMap((g) => Object.keys(artikelen[g].params));
+    const volgorde = [...eigen, ...poort.filter((p) => !eigen.includes(p))];
+    const gezien = new Set();
+    const uit = [];
+    for (const p of volgorde) {
+      if (p in antwoorden || gezien.has(p) || !vragenflow.vragen[p]) continue;
+      gezien.add(p);
+      uit.push({ param: p, raaktRoutes: 1, eigenVraag: eigen.includes(p), ...vragenflow.vragen[p] });
+    }
+    return uit;
+  }
+
   /** Uitleg voor één route onder de huidige antwoorden (optimistische run). */
   function uitleg(target, antwoorden) {
     const endpoint = artikelen[target].endpoint;
@@ -198,5 +214,5 @@ export function maakVerkenner({ engine, lawId, vragenflow, routekaart }) {
     }
   }
 
-  return { beoordeel, volgendeVragen, uitleg };
+  return { beoordeel, volgendeVragen, vragenVoorRoute, uitleg };
 }

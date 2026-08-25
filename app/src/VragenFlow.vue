@@ -47,12 +47,20 @@
           </div>
 
           <nldd-spacer size="16"></nldd-spacer>
-          <nldd-title size="4"><h4>Vervolgvragen</h4></nldd-title>
+          <nldd-title size="4"><h4>{{ routeFilter ? `Vragen voor art. ${routeFilter}` : 'Vervolgvragen' }}</h4></nldd-title>
+          <div v-if="routeFilter" class="filter-regel">
+            <nldd-tag size="sm" :text="`gefilterd op art. ${routeFilter}`"></nldd-tag>
+            <nldd-button variant="secondary" size="sm" text="Toon algemene vragen" @click="routeFilter = null; herbeoordeel()"></nldd-button>
+          </div>
           <div v-for="v in vragen" :key="v.param" class="vraag">
             <p class="vraag-tekst">
-              {{ v.beschrijving || v.param }}
-              <span class="vraag-meta">raakt {{ v.raaktRoutes }} routes · art. {{ v.artikelen.join(', ') }}</span>
+              {{ kortLabel(v.param) }}
+              <span class="vraag-meta">
+                <template v-if="routeFilter">{{ v.eigenVraag ? 'artikel-specifiek' : 'gemeenschappelijke voorwaarde' }}</template>
+                <template v-else>raakt {{ v.raaktRoutes }} routes · art. {{ v.artikelen.join(', ') }}</template>
+              </span>
             </p>
+            <p v-if="v.beschrijving" class="vraag-toelichting" :title="v.beschrijving">{{ v.beschrijving }}</p>
             <div v-if="v.type === 'boolean'" class="antwoord">
               <nldd-toggle-button-group type="radio" size="sm" :accessible-label="v.param">
                 <nldd-toggle-button value="ja" text="Ja" :selected="antwoorden[v.param] === true || undefined" @click="zetKeuze(v, 'ja')"></nldd-toggle-button>
@@ -92,12 +100,12 @@
           <div class="emmer">
             <nldd-title size="4"><h4>Voldoet al ({{ oordeel.voldoet.length }})</h4></nldd-title>
             <p class="emmer-uitleg">Alle machinaal toetsbare voorwaarden zijn met deze antwoorden vervuld.</p>
-            <RouteChip v-for="x in oordeel.voldoet" :key="x.route.artikel" :item="x" @uitleg="toonUitleg" />
+            <RouteChip v-for="x in oordeel.voldoet" :key="x.route.artikel" :item="x" @uitleg="toonUitleg" @vragen="filterOpRoute" />
           </div>
           <div class="emmer">
             <nldd-title size="4"><h4>Mogelijk, mits… ({{ oordeel.mogelijk.length }})</h4></nldd-title>
-            <p class="emmer-uitleg">Nog open; sommige met onvolledige analyse (gemarkeerd).</p>
-            <RouteChip v-for="x in oordeel.mogelijk" :key="x.route.artikel" :item="x" @uitleg="toonUitleg" />
+            <p class="emmer-uitleg">Nog open; sommige met onvolledige analyse (gemarkeerd). Klik "vragen" om gericht één route rond te maken.</p>
+            <RouteChip v-for="x in oordeel.mogelijk" :key="x.route.artikel" :item="x" :toonVragenKnop="true" @uitleg="toonUitleg" @vragen="filterOpRoute" />
           </div>
           <div class="emmer">
             <nldd-title size="4"><h4>Uitgesloten ({{ oordeel.uitgesloten.length }})</h4></nldd-title>
@@ -180,13 +188,33 @@ onMounted(async () => {
   }
 });
 
+const routeFilter = ref(null);
+
 function herbeoordeel() {
   oordeel.value = verkenner.value.beoordeel({ ...antwoorden });
   const gegroepeerd = new Set([...categorieParams.value, ...bijzonderParams.value]);
-  vragen.value = verkenner.value
-    .volgendeVragen({ ...antwoorden }, oordeel.value, 20)
-    .filter((v) => !gegroepeerd.has(v.param))
-    .slice(0, 8);
+  if (routeFilter.value) {
+    vragen.value = verkenner.value
+      .vragenVoorRoute(routeFilter.value, { ...antwoorden })
+      .filter((v) => !gegroepeerd.has(v.param));
+  } else {
+    vragen.value = verkenner.value
+      .volgendeVragen({ ...antwoorden }, oordeel.value, 20)
+      .filter((v) => !gegroepeerd.has(v.param))
+      .slice(0, 8);
+  }
+}
+
+function filterOpRoute(artikel) {
+  routeFilter.value = artikel;
+  herbeoordeel();
+}
+
+function kortLabel(p) {
+  const kaal = p
+    .replace(/^(betreft_|is_|heeft_|vormt_|wordt_|steun_voor_)/, '')
+    .replaceAll('_', ' ');
+  return kaal.charAt(0).toUpperCase() + kaal.slice(1) + '?';
 }
 
 function wisselCategorie(p) {
@@ -263,6 +291,16 @@ function toonUitleg(artikel) {
 .kolommen { display: grid; grid-template-columns: minmax(22rem, 1fr) 2fr; gap: 2rem; align-items: start; }
 .vraag { margin: 1.25rem 0; }
 .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0 1rem; }
+.filter-regel { display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0; }
+.vraag-toelichting {
+  margin: 0.15rem 0 0.35rem;
+  font-size: 0.8em;
+  color: var(--nldd-color-text-secondary, #555);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 .vraag-tekst { margin: 0 0 0.35rem; font-weight: 600; }
 .vraag-meta { display: block; font-weight: 400; font-size: 0.8em; color: var(--nldd-color-text-secondary, #555); }
 .emmers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }

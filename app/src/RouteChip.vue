@@ -19,13 +19,17 @@
       size="sm"
       :text="`${item.route.untranslatables.length} menselijke toets(en)`"
     ></nldd-tag>
+    <nldd-button v-if="toonVragenKnop" variant="secondary" size="sm" text="Vragen" @click="$emit('vragen', item.route.artikel)"></nldd-button>
     <nldd-button variant="secondary" size="sm" text="Waarom?" @click="$emit('uitleg', item.route.artikel)"></nldd-button>
   </div>
 </template>
 
 <script setup>
-defineProps({ item: { type: Object, required: true } });
-defineEmits(['uitleg']);
+defineProps({
+  item: { type: Object, required: true },
+  toonVragenKnop: { type: Boolean, default: false },
+});
+defineEmits(['uitleg', 'vragen']);
 </script>
 
 <style scoped>
